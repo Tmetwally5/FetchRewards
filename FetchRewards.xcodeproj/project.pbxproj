@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B423DBA22770EAFA69C5F515 /* Pods_FetchRewardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B740499F9DDE7AB3F509F9C /* Pods_FetchRewardsTests.framework */; };
+		BC97B29FA99553322EDC7418 /* Pods_FetchRewards_FetchRewardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 106E8E078A64084E0C6B10F5 /* Pods_FetchRewards_FetchRewardsUITests.framework */; };
 		F208EA262C12583F0040F4D1 /* FetchRewardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA252C12583F0040F4D1 /* FetchRewardsApp.swift */; };
 		F208EA282C12583F0040F4D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA272C12583F0040F4D1 /* ContentView.swift */; };
 		F208EA2A2C1258400040F4D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F208EA292C1258400040F4D1 /* Assets.xcassets */; };
@@ -16,6 +18,7 @@
 		F208EA3C2C1258400040F4D1 /* FetchRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA3B2C1258400040F4D1 /* FetchRewardsTests.swift */; };
 		F208EA462C1258400040F4D1 /* FetchRewardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA452C1258400040F4D1 /* FetchRewardsUITests.swift */; };
 		F208EA482C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA472C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift */; };
+		F6139D8D30C37DCEF7F2D9D6 /* Pods_FetchRewards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211C220FE6C7AC1E937E97F5 /* Pods_FetchRewards.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		106E8E078A64084E0C6B10F5 /* Pods_FetchRewards_FetchRewardsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchRewards_FetchRewardsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E2AD106A2370248F6BC5E00 /* Pods-FetchRewardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchRewardsTests.release.xcconfig"; path = "Target Support Files/Pods-FetchRewardsTests/Pods-FetchRewardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		211C220FE6C7AC1E937E97F5 /* Pods_FetchRewards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchRewards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B52C6B3FFCEC8FB2E192D4A /* Pods-FetchRewards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchRewards.release.xcconfig"; path = "Target Support Files/Pods-FetchRewards/Pods-FetchRewards.release.xcconfig"; sourceTree = "<group>"; };
+		344F8F14D4BDD96140EDEC76 /* Pods-FetchRewardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchRewardsTests.debug.xcconfig"; path = "Target Support Files/Pods-FetchRewardsTests/Pods-FetchRewardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B740499F9DDE7AB3F509F9C /* Pods_FetchRewardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchRewardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6782A3CC86755A4C59C8BD79 /* Pods-FetchRewards-FetchRewardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchRewards-FetchRewardsUITests.debug.xcconfig"; path = "Target Support Files/Pods-FetchRewards-FetchRewardsUITests/Pods-FetchRewards-FetchRewardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		807BF5846A749468593E92CA /* Pods-FetchRewards-FetchRewardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchRewards-FetchRewardsUITests.release.xcconfig"; path = "Target Support Files/Pods-FetchRewards-FetchRewardsUITests/Pods-FetchRewards-FetchRewardsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		91A178001CC612CD4C490A02 /* Pods-FetchRewards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchRewards.debug.xcconfig"; path = "Target Support Files/Pods-FetchRewards/Pods-FetchRewards.debug.xcconfig"; sourceTree = "<group>"; };
 		F208EA222C12583F0040F4D1 /* FetchRewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F208EA252C12583F0040F4D1 /* FetchRewardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsApp.swift; sourceTree = "<group>"; };
 		F208EA272C12583F0040F4D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6139D8D30C37DCEF7F2D9D6 /* Pods_FetchRewards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B423DBA22770EAFA69C5F515 /* Pods_FetchRewardsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +83,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC97B29FA99553322EDC7418 /* Pods_FetchRewards_FetchRewardsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AF9AAAE74EC731FD4A3B91F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				211C220FE6C7AC1E937E97F5 /* Pods_FetchRewards.framework */,
+				106E8E078A64084E0C6B10F5 /* Pods_FetchRewards_FetchRewardsUITests.framework */,
+				3B740499F9DDE7AB3F509F9C /* Pods_FetchRewardsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8942DBBB1581C378C329A9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91A178001CC612CD4C490A02 /* Pods-FetchRewards.debug.xcconfig */,
+				2B52C6B3FFCEC8FB2E192D4A /* Pods-FetchRewards.release.xcconfig */,
+				6782A3CC86755A4C59C8BD79 /* Pods-FetchRewards-FetchRewardsUITests.debug.xcconfig */,
+				807BF5846A749468593E92CA /* Pods-FetchRewards-FetchRewardsUITests.release.xcconfig */,
+				344F8F14D4BDD96140EDEC76 /* Pods-FetchRewardsTests.debug.xcconfig */,
+				1E2AD106A2370248F6BC5E00 /* Pods-FetchRewardsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F208EA192C12583F0040F4D1 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +121,8 @@
 				F208EA3A2C1258400040F4D1 /* FetchRewardsTests */,
 				F208EA442C1258400040F4D1 /* FetchRewardsUITests */,
 				F208EA232C12583F0040F4D1 /* Products */,
+				D8942DBBB1581C378C329A9F /* Pods */,
+				0AF9AAAE74EC731FD4A3B91F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +181,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F208EA4B2C1258400040F4D1 /* Build configuration list for PBXNativeTarget "FetchRewards" */;
 			buildPhases = (
+				63168FD7B8E366A6D33FA0AC /* [CP] Check Pods Manifest.lock */,
 				F208EA1E2C12583F0040F4D1 /* Sources */,
 				F208EA1F2C12583F0040F4D1 /* Frameworks */,
 				F208EA202C12583F0040F4D1 /* Resources */,
@@ -157,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F208EA4E2C1258400040F4D1 /* Build configuration list for PBXNativeTarget "FetchRewardsTests" */;
 			buildPhases = (
+				F55A8851FB21750EC43C8BD5 /* [CP] Check Pods Manifest.lock */,
 				F208EA332C1258400040F4D1 /* Sources */,
 				F208EA342C1258400040F4D1 /* Frameworks */,
 				F208EA352C1258400040F4D1 /* Resources */,
@@ -175,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F208EA512C1258400040F4D1 /* Build configuration list for PBXNativeTarget "FetchRewardsUITests" */;
 			buildPhases = (
+				7AD2E4AD0CCCEC1D845A148D /* [CP] Check Pods Manifest.lock */,
 				F208EA3D2C1258400040F4D1 /* Sources */,
 				F208EA3E2C1258400040F4D1 /* Frameworks */,
 				F208EA3F2C1258400040F4D1 /* Resources */,
@@ -257,6 +301,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63168FD7B8E366A6D33FA0AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FetchRewards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AD2E4AD0CCCEC1D845A148D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FetchRewards-FetchRewardsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F55A8851FB21750EC43C8BD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FetchRewardsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F208EA1E2C12583F0040F4D1 /* Sources */ = {
@@ -424,6 +537,7 @@
 		};
 		F208EA4C2C1258400040F4D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91A178001CC612CD4C490A02 /* Pods-FetchRewards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -453,6 +567,7 @@
 		};
 		F208EA4D2C1258400040F4D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B52C6B3FFCEC8FB2E192D4A /* Pods-FetchRewards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -482,6 +597,7 @@
 		};
 		F208EA4F2C1258400040F4D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 344F8F14D4BDD96140EDEC76 /* Pods-FetchRewardsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -502,6 +618,7 @@
 		};
 		F208EA502C1258400040F4D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E2AD106A2370248F6BC5E00 /* Pods-FetchRewardsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +639,7 @@
 		};
 		F208EA522C1258400040F4D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6782A3CC86755A4C59C8BD79 /* Pods-FetchRewards-FetchRewardsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +658,7 @@
 		};
 		F208EA532C1258400040F4D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 807BF5846A749468593E92CA /* Pods-FetchRewards-FetchRewardsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
