@@ -5,11 +5,12 @@ target 'FetchRewards' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for FetchRewards
+  pod 'Moya'
+  pod 'Moya/Combine'
 
   target 'FetchRewardsTests' do
     inherit! :search_paths
-    # Pods for testing
+   
   end
 
   target 'FetchRewardsUITests' do

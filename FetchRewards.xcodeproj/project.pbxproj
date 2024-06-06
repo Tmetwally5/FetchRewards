@@ -18,6 +18,10 @@
 		F208EA3C2C1258400040F4D1 /* FetchRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA3B2C1258400040F4D1 /* FetchRewardsTests.swift */; };
 		F208EA462C1258400040F4D1 /* FetchRewardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA452C1258400040F4D1 /* FetchRewardsUITests.swift */; };
 		F208EA482C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA472C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift */; };
+		F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2673AEC2C1266CF00740EFD /* MyAPI.swift */; };
+		F2673AEF2C12675A00740EFD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2673AEE2C12675A00740EFD /* NetworkService.swift */; };
+		F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */; };
+		F2FF5BEF2C126CD400F00A28 /* MealDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BEE2C126CD400F00A28 /* MealDetailsResponse.swift */; };
 		F6139D8D30C37DCEF7F2D9D6 /* Pods_FetchRewards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211C220FE6C7AC1E937E97F5 /* Pods_FetchRewards.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		F208EA412C1258400040F4D1 /* FetchRewardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRewardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F208EA452C1258400040F4D1 /* FetchRewardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsUITests.swift; sourceTree = "<group>"; };
 		F208EA472C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2673AEC2C1266CF00740EFD /* MyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPI.swift; sourceTree = "<group>"; };
+		F2673AEE2C12675A00740EFD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsResponse.swift; sourceTree = "<group>"; };
+		F2FF5BEE2C126CD400F00A28 /* MealDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +118,13 @@
 				344F8F14D4BDD96140EDEC76 /* Pods-FetchRewardsTests.debug.xcconfig */,
 				1E2AD106A2370248F6BC5E00 /* Pods-FetchRewardsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		F208EA192C12583F0040F4D1 = {
 			isa = PBXGroup;
 			children = (
+				F2673AEB2C1266B000740EFD /* Network */,
 				F208EA242C12583F0040F4D1 /* FetchRewards */,
 				F208EA3A2C1258400040F4D1 /* FetchRewardsTests */,
 				F208EA442C1258400040F4D1 /* FetchRewardsUITests */,
@@ -174,6 +182,25 @@
 			path = FetchRewardsUITests;
 			sourceTree = "<group>";
 		};
+		F2673AEB2C1266B000740EFD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F2FF5BEB2C12692500F00A28 /* Models */,
+				F2673AEC2C1266CF00740EFD /* MyAPI.swift */,
+				F2673AEE2C12675A00740EFD /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F2FF5BEB2C12692500F00A28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */,
+				F2FF5BEE2C126CD400F00A28 /* MealDetailsResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,6 +212,7 @@
 				F208EA1E2C12583F0040F4D1 /* Sources */,
 				F208EA1F2C12583F0040F4D1 /* Frameworks */,
 				F208EA202C12583F0040F4D1 /* Resources */,
+				C76D8D0D589CB6EE0A17AD0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +250,7 @@
 				F208EA3D2C1258400040F4D1 /* Sources */,
 				F208EA3E2C1258400040F4D1 /* Frameworks */,
 				F208EA3F2C1258400040F4D1 /* Resources */,
+				42DC03B8B73CB0D92FB0F90F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +332,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		42DC03B8B73CB0D92FB0F90F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FetchRewards-FetchRewardsUITests/Pods-FetchRewards-FetchRewardsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FetchRewards-FetchRewardsUITests/Pods-FetchRewards-FetchRewardsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FetchRewards-FetchRewardsUITests/Pods-FetchRewards-FetchRewardsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		63168FD7B8E366A6D33FA0AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +393,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C76D8D0D589CB6EE0A17AD0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FetchRewards/Pods-FetchRewards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FetchRewards/Pods-FetchRewards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FetchRewards/Pods-FetchRewards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F55A8851FB21750EC43C8BD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,10 +439,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FF5BEF2C126CD400F00A28 /* MealDetailsResponse.swift in Sources */,
+				F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */,
 				F208EA2F2C1258400040F4D1 /* Persistence.swift in Sources */,
 				F208EA282C12583F0040F4D1 /* ContentView.swift in Sources */,
 				F208EA262C12583F0040F4D1 /* FetchRewardsApp.swift in Sources */,
+				F2673AEF2C12675A00740EFD /* NetworkService.swift in Sources */,
 				F208EA322C1258400040F4D1 /* FetchRewards.xcdatamodeld in Sources */,
+				F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +624,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fetchrewards.FetchRewards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fetchrewards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -587,7 +654,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fetchrewards.FetchRewards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fetchrewards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
