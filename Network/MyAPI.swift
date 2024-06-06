@@ -28,7 +28,7 @@ extension MyAPI: TargetType {
         }
 
     }
-    var method: Method {
+    var method: Moya.Method {
         switch self {
         case .getUsers:
             return .get
