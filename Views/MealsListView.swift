@@ -28,7 +28,11 @@ struct MealsListView: View {
                         Text(option.rawValue.capitalized)
                     }
                 }.onChange(of: selectedSearchOption) { _ , newValue in
-                    if newValue == .category{
+                    viewModel.meals = []
+                    if newValue == .name{
+                        searchQuery = ""
+                        viewModel.fetchMeals(searchOption: newValue, query: searchQuery)
+                    }else if newValue == .category{
                         searchQuery = category
                         viewModel.fetchMeals(searchOption: newValue, query: searchQuery)
                     }else{
@@ -95,7 +99,9 @@ struct MealsListView: View {
             .padding().onAppear(perform: {
                 viewModel.fetchCategories()
             }).onChange(of: searchQuery, {
-                viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                if selectedSearchOption != .area && selectedSearchOption != .ingredient{
+                    viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                }
             }).navigationBarTitle("Recipes")
         }
     }
