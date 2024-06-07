@@ -11,25 +11,67 @@ struct MealDetailView: View {
     @ObservedObject var viewModel: MealDetailViewModel
     let mealId: String
     
-    init(viewModel: MealDetailViewModel, mealId: String) {
-        self.viewModel = viewModel
-        self.mealId = mealId
-    }
-    
     var body: some View {
         VStack {
-            if let meal = viewModel.meal {
-                Text(meal.strMeal ?? "Unknown Meal")
-                    .font(.largeTitle)
-                    .padding()
-                Text(meal.strInstructions ?? "No instructions available.")
-                    .padding()
-            } else {
-                Text("Loading...")
-            }
+            contentView
         }
         .onAppear {
             viewModel.fetchMealDetail(byId: mealId)
         }
+    }
+    
+    @ViewBuilder
+    private var contentView: some View {
+        if let meal = viewModel.meal {
+            ScrollView{
+                MealInfoView(meal: meal)
+            }
+        } else {
+            Text("Loading...")
+        }
+    }
+}
+
+struct MealInfoView: View {
+    let meal: MealDetails
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            Text(meal.strMeal ?? "Unknown Meal")
+                .font(.largeTitle)
+            
+            Divider()
+            Text("Instructions:")
+                .font(.headline)
+            
+            Text(meal.strInstructions ?? "No instructions available.")
+            Divider()
+            
+          //  IngredientsListView(meal: meal)
+        }
+        .padding()
+    }
+}
+
+struct IngredientsListView: View {
+    let meal: MealDetails
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Ingredients:")
+                .font(.headline)
+            
+            /*ForEach(1..<21) { index in
+                if let ingredient = meal.value(for: "strIngredient\(index)"), !ingredient.isEmpty {
+                    Text(ingredient)
+                }
+            }*/
+        }
+    }
+}
+
+extension MealDetails {
+    func value(for key: String) -> String {
+        return ""
     }
 }
