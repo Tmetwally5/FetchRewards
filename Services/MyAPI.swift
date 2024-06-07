@@ -10,28 +10,23 @@ import Combine
 import Moya
 
 enum MyAPI {
-    case getUsers
     case fetchMealDetailsByID(meal_ID : String)
     case fetchMealListByCategory(category:String)
 }
 
 extension MyAPI: TargetType {
-    var baseURL: URL { return URL(string: "https://jsonplaceholder.typicode.com")! }
+    var baseURL: URL { return URL(string: "https://themealdb.com/api/json/v1/1/")! }
     var path: String {
         switch self {
-        case .getUsers:
-            return "/users"
-        case .fetchMealDetailsByID:
-            return "dd"
-        case .fetchMealListByCategory:
-            return ""
+        case .fetchMealDetailsByID(let meal_ID):
+            return "lookup.php?i=\(meal_ID)"
+        case .fetchMealListByCategory(let category):
+            return "filter.php?c=\(category)"
         }
 
     }
     var method: Moya.Method {
         switch self {
-        case .getUsers:
-            return .get
         case .fetchMealDetailsByID:
             return .get
         case .fetchMealListByCategory:
@@ -40,8 +35,6 @@ extension MyAPI: TargetType {
     }
     var task: Task {
         switch self {
-        case .getUsers:
-            return .requestPlain
         case .fetchMealDetailsByID:
             return .requestPlain
         case .fetchMealListByCategory:

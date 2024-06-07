@@ -12,6 +12,7 @@ class NetworkService {
     private let provider = MoyaProvider<MyAPI>()
 
     func fetchMealListByCategory(category : String) -> AnyPublisher<MealsResponse, Error> {
+       
         return provider.requestPublisher(.fetchMealListByCategory(category: category))
             .map(MealsResponse.self)
             .mapError { $0 as Error }
