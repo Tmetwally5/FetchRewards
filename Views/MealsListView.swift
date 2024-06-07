@@ -20,6 +20,7 @@ struct MealsListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Text("Search By")
                 Picker("Select Search Option", selection: $selectedSearchOption) {
                     ForEach(SearchOption.allCases, id: \.self) { option in
                         Text(option.rawValue.capitalized)
@@ -32,6 +33,9 @@ struct MealsListView: View {
                     // Display category picker
                     if !viewModel.categories.isEmpty {
                         HStack{
+                            Spacer()
+                            Text("Select a category:")
+                            Spacer()
                             Picker("Select Category", selection: $searchQuery) {
                                 ForEach(viewModel.categories, id: \.id) { category in
                                     Text(category.strCategory ?? "")
@@ -39,7 +43,8 @@ struct MealsListView: View {
                                 }
                             }
                             .pickerStyle(DefaultPickerStyle())
-                        }.background(Color.yellow)
+                            Spacer()
+                        }.background(Color.gray.opacity(0.2))
 
                     } else {
                         ProgressView() // Show loading indicator while categories are being fetched
@@ -54,7 +59,7 @@ struct MealsListView: View {
                         }) {
                             Text("Search")
                                 .foregroundColor(.white)
-                                .padding().frame(width: 100, height: 40) 
+                                .padding().frame(width: 100, height: 40)
                                 .background(Color.blue)
                                 .cornerRadius(8)
                         }
@@ -74,8 +79,7 @@ struct MealsListView: View {
                     }
                 }
             }
-            .padding()
-            .navigationTitle("Recipes").onAppear(perform: {
+            .padding().onAppear(perform: {
                 viewModel.fetchCategories()
             }).onChange(of: searchQuery, {
                 viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
