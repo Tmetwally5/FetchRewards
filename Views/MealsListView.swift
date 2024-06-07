@@ -27,7 +27,8 @@ struct MealsListView: View {
                     ForEach(SearchOption.allCases, id: \.self) { option in
                         Text(option.rawValue.capitalized)
                     }
-                }.onChange(of: selectedSearchOption) { _ , newValue in
+                }
+                    .onChange(of: selectedSearchOption) { _ , newValue in
                     viewModel.meals = []
                     if newValue == .name{
                         searchQuery = ""
@@ -41,7 +42,6 @@ struct MealsListView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 if selectedSearchOption == .category {
-                    // Display category picker
                     if !viewModel.categories.isEmpty {
                         HStack{
                             Spacer()
@@ -52,12 +52,11 @@ struct MealsListView: View {
                                     Text(category.strCategory ?? "")
                                                         .tag(category.strCategory ?? "")
                                 }
-                            }
-                            .pickerStyle(DefaultPickerStyle())
+                            } .background(Color.blue)
+                                .pickerStyle(DefaultPickerStyle()).frame(width:150,height:40).cornerRadius(8)
                             Spacer()
-                        }.background(Color.gray.opacity(0.2)).cornerRadius(8)                        .onReceive(viewModel.$categories) { _ in
+                        }.tint(.white).background(Color.gray.opacity(0.2)).cornerRadius(8)                        .onReceive(viewModel.$categories) { _ in
                             if !viewModel.categories.isEmpty && searchQuery.isEmpty {
-                                // Update searchQuery with the first category
                                 searchQuery = viewModel.categories[0].strCategory ?? ""
                             }
                         }.onChange(of: searchQuery){_ ,newValue in
@@ -94,9 +93,8 @@ struct MealsListView: View {
                     NavigationLink(destination: MealDetailView(viewModel: detailsViewModel, mealId: meal.id ?? "")) {
                         Text(meal.strMeal ?? "")
                     }
-                }
-            }
-            .padding().onAppear(perform: {
+                }.cornerRadius(8)
+            }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)).onAppear(perform: {
                 viewModel.fetchCategories()
             }).onChange(of: searchQuery, {
                 if selectedSearchOption != .area && selectedSearchOption != .ingredient{
