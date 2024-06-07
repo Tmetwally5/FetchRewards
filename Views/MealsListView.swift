@@ -10,6 +10,8 @@ struct MealsListView: View {
     @ObservedObject var viewModel: MealsViewModel
     @ObservedObject var detailsViewModel: MealDetailViewModel
     @State private var searchQuery: String = ""
+    @State private var category: String = ""
+    
     @State private var selectedSearchOption: SearchOption = .category
     
     init(networkService: NetworkService) {
@@ -27,8 +29,10 @@ struct MealsListView: View {
                     }
                 }.onChange(of: selectedSearchOption) { _ , newValue in
                     if newValue == .category{
-                        
+                        searchQuery = category
                         viewModel.fetchMeals(searchOption: newValue, query: searchQuery)
+                    }else{
+                        searchQuery = ""
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -52,6 +56,8 @@ struct MealsListView: View {
                                 // Update searchQuery with the first category
                                 searchQuery = viewModel.categories[0].strCategory ?? ""
                             }
+                        }.onChange(of: searchQuery){_ ,newValue in
+                             category = newValue
                         }
 
                     } else {
