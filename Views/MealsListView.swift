@@ -8,18 +8,12 @@
 import SwiftUI
 
 struct MealsListView: View {
-    @ObservedObject var mealsViewModel: MealsViewModel
-    @ObservedObject var detailsViewModel: MealDetailViewModel
-    @ObservedObject var reachability:Reachability
+    @EnvironmentObject var mealsViewModel: MealsViewModel
+    @EnvironmentObject var detailsViewModel: MealDetailViewModel
+    @EnvironmentObject var reachability:Reachability
     @State private var searchQuery: String = ""
     @State private var category: String = ""
     @State private var selectedSearchOption: SearchOption = .category
-    
-    init(mealDetailViewModel: MealDetailViewModel,mealsViewModel:MealsViewModel,reachability:Reachability) {
-        self.mealsViewModel = mealsViewModel
-        self.detailsViewModel = mealDetailViewModel
-        self.reachability = reachability
-    }
     
     var body: some View {
         NavigationView {
