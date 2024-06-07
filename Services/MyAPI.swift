@@ -12,6 +12,10 @@ import Moya
 enum MyAPI {
     case fetchMealDetailsByID(meal_ID : String)
     case fetchMealListByCategory(category:String)
+    case fetchMealListByName(name:String)
+    case fetchMealListByIngredient(ingredient:String)
+    case fetchMealListByCountry(country:String)
+    
 }
 
 extension MyAPI: TargetType {
@@ -22,6 +26,12 @@ extension MyAPI: TargetType {
         case .fetchMealDetailsByID:
             return "lookup.php"
         case .fetchMealListByCategory:
+            return "filter.php"
+        case .fetchMealListByName:
+            return "search.php"
+        case .fetchMealListByIngredient(ingredient: let ingredient):
+            return "filter.php"
+        case .fetchMealListByCountry(country: let country):
             return "filter.php"
         }
     }
@@ -34,6 +44,12 @@ extension MyAPI: TargetType {
             return .requestParameters(parameters: ["i": mealID], encoding: URLEncoding.default)
         case .fetchMealListByCategory(let category):
             return .requestParameters(parameters: ["c": category], encoding: URLEncoding.default)
+        case .fetchMealListByName(name: let name):
+            return .requestParameters(parameters: ["s": name], encoding: URLEncoding.default)
+        case .fetchMealListByIngredient(ingredient: let ingredient):
+            return .requestParameters(parameters: ["i": ingredient], encoding: URLEncoding.default)
+        case .fetchMealListByCountry(country: let country):
+            return .requestParameters(parameters: ["a": country], encoding: URLEncoding.default)
         }
     }
     var headers: [String: String]? {

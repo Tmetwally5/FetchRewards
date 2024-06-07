@@ -24,4 +24,25 @@ class NetworkService {
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }
+    
+    func fetchMealListByName(name : String) -> AnyPublisher<MealDetailsResponse, Error> {
+        return provider.requestPublisher(.fetchMealListByName(name: name))
+            .map(MealDetailsResponse.self)
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
+    }
+    
+    func fetchMealListByIngredient(ingredient : String) -> AnyPublisher<MealDetailsResponse, Error> {
+        return provider.requestPublisher(.fetchMealListByIngredient(ingredient: ingredient))
+            .map(MealDetailsResponse.self)
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
+    }
+    
+    func fetchMealListByCountry(country : String) -> AnyPublisher<MealDetailsResponse, Error> {
+        return provider.requestPublisher(.fetchMealListByCountry(country: country))
+            .map(MealDetailsResponse.self)
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
+    }
 }
