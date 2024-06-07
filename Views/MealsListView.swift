@@ -27,8 +27,6 @@ struct MealsListView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                
-                
                 if selectedSearchOption == .category {
                     // Display category picker
                     if !viewModel.categories.isEmpty {
@@ -47,11 +45,11 @@ struct MealsListView: View {
                         }.background(Color.gray.opacity(0.2))
 
                     } else {
-                        ProgressView() // Show loading indicator while categories are being fetched
+                        ProgressView()
                     }
                 } else {
                     HStack{
-                        TextField("Search By \(selectedSearchOption.rawValue.capitalized)", text: $searchQuery)
+                        TextField(selectedSearchOption.getAsExample(), text: $searchQuery)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         Button(action: {
@@ -90,9 +88,21 @@ struct MealsListView: View {
 
 enum SearchOption: String, CaseIterable {
     case category
-    case area
-    case ingredient
     case name
+    case ingredient
+    case area
+    func getAsExample()->String{
+        switch self {
+            case .area:
+                return "e.g., Canadian, Mexican"
+            case .category:
+                return "e.g., Seafood, Dessert"
+            case .ingredient:
+                return "e.g., chicken breast, tomatoes"
+            case .name:
+                return "e.g., Arrabiata, Margherita"
+        }
+    }
 }
 
 struct MealsListView_Previews: PreviewProvider {
