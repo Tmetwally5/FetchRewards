@@ -19,7 +19,7 @@ struct MealsListView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack (spacing:10){
                 Text("Search By")
                 Picker("Select Search Option", selection: $selectedSearchOption) {
                     ForEach(SearchOption.allCases, id: \.self) { option in
@@ -32,7 +32,7 @@ struct MealsListView: View {
                     if !viewModel.categories.isEmpty {
                         HStack{
                             Spacer()
-                            Text("Select a category:")
+                            Text("Select a category")
                             Spacer()
                             Picker("Select Category", selection: $searchQuery) {
                                 ForEach(viewModel.categories, id: \.id) { category in
@@ -42,7 +42,7 @@ struct MealsListView: View {
                             }
                             .pickerStyle(DefaultPickerStyle())
                             Spacer()
-                        }.background(Color.gray.opacity(0.2))
+                        }.background(Color.gray.opacity(0.2)).cornerRadius(8)
 
                     } else {
                         ProgressView()
@@ -51,26 +51,25 @@ struct MealsListView: View {
                     HStack{
                         TextField(selectedSearchOption.getAsExample(), text: $searchQuery)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        Button(action: {
-                            viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
-                        }) {
-                            Text("Search")
-                                .foregroundColor(.white)
-                                .padding().frame(width: 100, height: 40)
-                                .background(Color.blue)
-                                .cornerRadius(8)
+                        if selectedSearchOption != .name{
+                            Button(action: {
+                                viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                            }) {
+                                Text("Search")
+                                    .foregroundColor(.white)
+                                    .padding().frame(width: 100, height: 40)
+                                    .background(Color.blue)
+                                    .cornerRadius(8)
+                            }
                         }
 
                     }
                 }
-                
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)
                         .padding()
                 }
-                
                 List(viewModel.meals) { meal in
                     NavigationLink(destination: MealDetailView(viewModel: detailsViewModel, mealId: meal.id ?? "")) {
                         Text(meal.strMeal ?? "")
@@ -81,7 +80,7 @@ struct MealsListView: View {
                 viewModel.fetchCategories()
             }).onChange(of: searchQuery, {
                 viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
-            })
+            }).navigationBarTitle("Recipes")
         }
     }
 }
