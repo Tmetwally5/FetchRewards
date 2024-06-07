@@ -7,8 +7,14 @@
 import SwiftUI
 
 struct LaunchScreenView: View {
-
     var body: some View {
-        Text("luch screen")
+        VStack {
+            Spacer()
+            Image("launch_image")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+            Spacer()
+        }
     }
 }
