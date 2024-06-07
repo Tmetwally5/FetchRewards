@@ -26,6 +26,7 @@
 		F2FF5BF92C12861900F00A28 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BF82C12861900F00A28 /* MealDetailView.swift */; };
 		F2FF5BFC2C134E1800F00A28 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BFB2C134E1800F00A28 /* CategoriesResponse.swift */; };
 		F2FF5BFE2C1399EF00F00A28 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BFD2C1399EF00F00A28 /* Reachability.swift */; };
+		F2FF5C012C139FA500F00A28 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5C002C139FA500F00A28 /* AppDependencies.swift */; };
 		F6139D8D30C37DCEF7F2D9D6 /* Pods_FetchRewards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211C220FE6C7AC1E937E97F5 /* Pods_FetchRewards.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		F2FF5BF82C12861900F00A28 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		F2FF5BFB2C134E1800F00A28 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		F2FF5BFD2C1399EF00F00A28 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F2FF5C002C139FA500F00A28 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F2FF5BFD2C1399EF00F00A28 /* Reachability.swift */,
+				F2FF5C002C139FA500F00A28 /* AppDependencies.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				F2FF5BF22C12858C00F00A28 /* MealsViewModel.swift in Sources */,
 				F2673AEF2C12675A00740EFD /* NetworkService.swift in Sources */,
 				F2FF5BF72C1285F700F00A28 /* MealsListView.swift in Sources */,
+				F2FF5C012C139FA500F00A28 /* AppDependencies.swift in Sources */,
 				F2FF5BF42C1285AD00F00A28 /* MealDetailViewModel.swift in Sources */,
 				F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */,
 			);

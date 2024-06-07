@@ -124,13 +124,13 @@ struct CategoryPickerView: View {
                     }
                 }
                 .pickerStyle(DefaultPickerStyle())
-                .frame(width: 200, height: 40)
+                
                 .background(Color.blue)
                 .cornerRadius(8)
                 .tint(.white)
                 Spacer()
             }
-            .background(Color.gray.opacity(0.2))
+            
             .cornerRadius(8)
             .onReceive(viewModel.$categories) { _ in
                 if !viewModel.categories.isEmpty && searchQuery.isEmpty {
