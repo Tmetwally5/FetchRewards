@@ -29,7 +29,19 @@ struct MealsListView: View {
                 .padding()
                 
                 if selectedSearchOption == .category {
-                    Text("Category list")
+                    // Display category picker
+                    if !viewModel.categories.isEmpty {
+                        Picker("Select Category", selection: $searchQuery) {
+                            ForEach(viewModel.categories, id: \.id) { category in
+                                Text(category.strCategory ?? "")
+                                                    .tag(category.strCategory ?? "")
+                            }
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                        .padding()
+                    } else {
+                        ProgressView() // Show loading indicator while categories are being fetched
+                    }
                 } else {
                     TextField("Enter \(selectedSearchOption.rawValue.capitalized)", text: $searchQuery)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -59,7 +71,9 @@ struct MealsListView: View {
                 }
             }
             .padding()
-            .navigationTitle("Recipes")
+            .navigationTitle("Recipes").onAppear(perform: {
+                viewModel.fetchCategories()
+            })
         }
     }
 }

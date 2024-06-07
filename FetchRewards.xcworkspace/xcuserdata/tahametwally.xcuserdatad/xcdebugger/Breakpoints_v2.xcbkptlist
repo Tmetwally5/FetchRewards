@@ -20,5 +20,67 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AD7C805-4233-4292-A76D-7195B1EB6051"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewModels/MealsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "fetchCategories()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5490C761-DC56-4AD0-8D99-E725D3679313"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewModels/MealsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchCategories()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5490C761-DC56-4AD0-8D99-E725D3679313 - f46f6066591dd547"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in FetchRewards.MealsViewModel.fetchCategories() -&gt; ()"
+                  moduleName = "FetchRewards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tahametwally/Desktop/FetchRewards/ViewModels/MealsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+               <Location
+                  uuid = "5490C761-DC56-4AD0-8D99-E725D3679313 - f46f6066591dd547"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in FetchRewards.MealsViewModel.fetchCategories() -&gt; ()"
+                  moduleName = "FetchRewards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tahametwally/Desktop/FetchRewards/ViewModels/MealsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

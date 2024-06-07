@@ -24,6 +24,7 @@
 		F2FF5BF42C1285AD00F00A28 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BF32C1285AD00F00A28 /* MealDetailViewModel.swift */; };
 		F2FF5BF72C1285F700F00A28 /* MealsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BF62C1285F700F00A28 /* MealsListView.swift */; };
 		F2FF5BF92C12861900F00A28 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BF82C12861900F00A28 /* MealDetailView.swift */; };
+		F2FF5BFC2C134E1800F00A28 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BFB2C134E1800F00A28 /* CategoriesResponse.swift */; };
 		F6139D8D30C37DCEF7F2D9D6 /* Pods_FetchRewards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211C220FE6C7AC1E937E97F5 /* Pods_FetchRewards.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		F2FF5BF32C1285AD00F00A28 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		F2FF5BF62C1285F700F00A28 /* MealsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListView.swift; sourceTree = "<group>"; };
 		F2FF5BF82C12861900F00A28 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
+		F2FF5BFB2C134E1800F00A28 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			children = (
 				F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */,
 				F2FF5BEE2C126CD400F00A28 /* MealDetailsResponse.swift */,
+				F2FF5BFB2C134E1800F00A28 /* CategoriesResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */,
 				F208EA282C12583F0040F4D1 /* ContentView.swift in Sources */,
 				F208EA262C12583F0040F4D1 /* FetchRewardsApp.swift in Sources */,
+				F2FF5BFC2C134E1800F00A28 /* CategoriesResponse.swift in Sources */,
 				F2FF5BF22C12858C00F00A28 /* MealsViewModel.swift in Sources */,
 				F2673AEF2C12675A00740EFD /* NetworkService.swift in Sources */,
 				F2FF5BF72C1285F700F00A28 /* MealsListView.swift in Sources */,

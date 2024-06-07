@@ -39,4 +39,8 @@ class NetworkService {
     func fetchMealListByCountry(country: String) -> AnyPublisher<MealsResponse, Error> {
         return request(.fetchMealListByCountry(country: country), type: MealsResponse.self)
     }
+    
+    func fetchCategories() -> AnyPublisher<CategoriesResponse, Error> {
+        return request(.fetchCategories, type: CategoriesResponse.self)
+    }
 }
