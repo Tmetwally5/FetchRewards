@@ -21,7 +21,7 @@ class MealDetailViewModel: ObservableObject {
     
     func fetchMealDetail(byId id: String) {
         networkService.fetchMealDetailsByID(mealID: id)
-            .receive(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
             .handleEvents(receiveSubscription: {[weak self] _ in
                 self?.errorMessage = nil // Clear previous errors
             })

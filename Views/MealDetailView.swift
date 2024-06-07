@@ -47,7 +47,7 @@ struct MealInfoView: View {
             Text(meal.strInstructions ?? "No instructions available.")
             Divider()
             
-          //  IngredientsListView(meal: meal)
+            IngredientsListView(meal: meal)
         }
         .padding()
     }
@@ -61,11 +61,9 @@ struct IngredientsListView: View {
             Text("Ingredients:")
                 .font(.headline)
             
-            /*ForEach(1..<21) { index in
-                if let ingredient = meal.value(for: "strIngredient\(index)"), !ingredient.isEmpty {
-                    Text(ingredient)
-                }
-            }*/
+            ForEach(meal.getIngredientMeasurementListxx(), id: \.0) { ingredient, measure in
+                    Text("\(ingredient) - \(measure)")
+            }
         }
     }
 }
