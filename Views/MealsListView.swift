@@ -4,14 +4,41 @@
 //
 //  Created by Taha Metwally on 6/6/2024.
 //
+//
+//  MealsListView.swift
+//  FetchRewards
+//
+//  Created by Taha Metwally on 6/6/2024.
+//
 import SwiftUI
+
+import Network
+
+class Reachability: ObservableObject {
+    @Published var isConnected: Bool = true
+
+    private var monitor: NWPathMonitor
+    private var queue: DispatchQueue
+
+    init() {
+        self.monitor = NWPathMonitor()
+        self.queue = DispatchQueue(label: "NetworkMonitor")
+        self.monitor.pathUpdateHandler = { path in
+            DispatchQueue.main.async {
+                self.isConnected = (path.status == .satisfied)
+            }
+        }
+        self.monitor.start(queue: self.queue)
+    }
+}
+
 
 struct MealsListView: View {
     @ObservedObject var viewModel: MealsViewModel
     @ObservedObject var detailsViewModel: MealDetailViewModel
+    @ObservedObject var reachability = Reachability()
     @State private var searchQuery: String = ""
     @State private var category: String = ""
-    
     @State private var selectedSearchOption: SearchOption = .category
     
     init(networkService: NetworkService) {
@@ -22,40 +49,56 @@ struct MealsListView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 10) {
-                SearchOptionPicker(selectedSearchOption: $selectedSearchOption)
-                    .onChange(of: selectedSearchOption) { _, newValue in
-                        handleSearchOptionChange(newValue)
-                    }
-                    .padding(.bottom, 10)
-                
-                if selectedSearchOption == .category {
-                    CategoryPickerView(viewModel: viewModel, searchQuery: $searchQuery, category: $category)
+                if !reachability.isConnected {
+                    Spacer()
+                    Text("No internet connection. Please check your connection.")
+                        .foregroundColor(.red)
+                        .padding()
+                    Spacer()
                 } else {
-                    SearchTextFieldView(
-                        selectedSearchOption: selectedSearchOption,
-                        searchQuery: $searchQuery,
-                        fetchMealsAction: {
-                            viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                    SearchOptionPicker(selectedSearchOption: $selectedSearchOption)
+                        .onChange(of: selectedSearchOption) { _, newValue in
+                            handleSearchOptionChange(newValue)
                         }
-                    )
-                }
-                
-                if let errorMessage = viewModel.errorMessage {
-                    ErrorMessageView(errorMessage: errorMessage)
-                }
-                
-                if viewModel.meals.isEmpty {
-                    NoResultsView(selectedSearchOption: selectedSearchOption)
-                } else {
-                    MealsList(viewModel: viewModel, detailsViewModel: detailsViewModel)
+                        .padding(.bottom, 10)
+                    
+                    if selectedSearchOption == .category {
+                        CategoryPickerView(viewModel: viewModel, searchQuery: $searchQuery, category: $category)
+                    } else {
+                        SearchTextFieldView(
+                            selectedSearchOption: selectedSearchOption,
+                            searchQuery: $searchQuery,
+                            fetchMealsAction: {
+                                viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                            }
+                        )
+                    }
+                    
+                    if let errorMessage = viewModel.errorMessage {
+                        ErrorMessageView(errorMessage: errorMessage)
+                    }
+                    
+                    if viewModel.meals.isEmpty {
+                        NoResultsView(selectedSearchOption: selectedSearchOption)
+                    } else {
+                        MealsList(viewModel: viewModel, detailsViewModel: detailsViewModel)
+                    }
                 }
             }
             .padding(.horizontal, 5)
             .onAppear {
-                viewModel.fetchCategories()
+                if reachability.isConnected {
+                    viewModel.fetchCategories()
+                }
             }
-            .onChange(of: searchQuery) { _,_ in
+            .onChange(of: searchQuery) { _ , _ in
                 if selectedSearchOption != .area && selectedSearchOption != .ingredient {
+                    viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                }
+            }
+            .onChange(of: reachability.isConnected) { _, isConnected in
+                if isConnected {
+                    viewModel.fetchCategories()
                     viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                 }
             }
