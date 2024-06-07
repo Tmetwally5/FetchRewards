@@ -8,8 +8,18 @@
 
 import SwiftUI
 class AppDependencies: ObservableObject {
-    // Define your dependencies
-    let mealDetailViewModel = MealDetailViewModel(networkService: NetworkService())
-    let mealsViewModel = MealsViewModel(networkService: NetworkService())
-    let reachability = Reachability()
+
+    @Published var mealDetailViewModel: MealDetailViewModel
+    @Published var mealsViewModel: MealsViewModel
+    @Published var reachability: Reachability
+    let networkService:NetworkService
+
+    init() {
+        // Initialize your dependencies
+        self.networkService = NetworkService()
+        self.mealDetailViewModel = MealDetailViewModel(networkService: networkService)
+        self.mealsViewModel = MealsViewModel(networkService: networkService)
+        self.reachability = Reachability()
+    }
 }
+
