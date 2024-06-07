@@ -11,7 +11,11 @@ import Moya
 
 class NetworkService {
     
-    private let provider = MoyaProvider<MyAPI>()
+    private let provider:MoyaProvider<MyAPI>
+    
+    init(provider: MoyaProvider<MyAPI>) {
+        self.provider = provider
+    }
     
     private func request<T: Decodable>(_ target: MyAPI, type: T.Type) -> AnyPublisher<T, Error> {
         return provider.requestPublisher(target)

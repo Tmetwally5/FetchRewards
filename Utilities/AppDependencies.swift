@@ -7,16 +7,19 @@
 
 
 import SwiftUI
+import Moya
+
 class AppDependencies: ObservableObject {
 
     @Published var mealDetailViewModel: MealDetailViewModel
     @Published var mealsViewModel: MealsViewModel
     @Published var reachability: Reachability
     let networkService:NetworkService
+    let moyaProvider:MoyaProvider<MyAPI>
 
     init() {
-        // Initialize your dependencies
-        self.networkService = NetworkService()
+        self.moyaProvider = MoyaProvider<MyAPI>()
+        self.networkService = NetworkService(provider: moyaProvider)
         self.mealDetailViewModel = MealDetailViewModel(networkService: networkService)
         self.mealsViewModel = MealsViewModel(networkService: networkService)
         self.reachability = Reachability()
