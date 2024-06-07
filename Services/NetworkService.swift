@@ -19,7 +19,7 @@ class NetworkService {
     }
     
     func fetchMealDetailsByID(meal_ID : String) -> AnyPublisher<MealDetailsResponse, Error> {
-        return provider.requestPublisher(.fetchMealDetailsByID(meal_ID: meal_ID))
+        return provider.requestPublisher(.fetchMealDetailsByID(mealID: meal_ID))
             .map(MealDetailsResponse.self)
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
