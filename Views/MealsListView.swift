@@ -27,21 +27,25 @@ struct MealsListView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .padding()
                 
-                TextField("Enter \(selectedSearchOption.rawValue.capitalized)", text: $searchQuery)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                
-                Button(action: {
-                    viewModel.fetchMeals(category: searchQuery)
-                }) {
-                    Text("Search")
-                        .foregroundColor(.white)
+                if selectedSearchOption == .category{
+                    Text("Category list")
+                }else{
+                    TextField("Enter \(selectedSearchOption.rawValue.capitalized)", text: $searchQuery)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
+                    
+                    Button(action: {
+                        viewModel.fetchMeals(category: searchQuery)
+                    }) {
+                        Text("Search")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(8)
+                    }
                 }
+
                 
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
