@@ -52,9 +52,9 @@ struct MealsListView: View {
                                     Text(category.strCategory ?? "")
                                                         .tag(category.strCategory ?? "")
                                 }
-                            } .background(Color.blue)
-                                .pickerStyle(DefaultPickerStyle()).frame(width:150,height:40).cornerRadius(8)
-                            Spacer()
+                            }
+                                .pickerStyle(DefaultPickerStyle()).frame(width:150,height:40).background(Color.blue).cornerRadius(8)
+                           // Spacer()
                         }.tint(.white).background(Color.gray.opacity(0.2)).cornerRadius(8)                        .onReceive(viewModel.$categories) { _ in
                             if !viewModel.categories.isEmpty && searchQuery.isEmpty {
                                 searchQuery = viewModel.categories[0].strCategory ?? ""
