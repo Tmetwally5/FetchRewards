@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
-import CoreData
+
+import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var appDependencies: AppDependencies
+
     var body: some View {
-        MealsListView(networkService: NetworkService())
+        MealsListView(
+            mealDetailViewModel: appDependencies.mealDetailViewModel,
+            mealsViewModel: appDependencies.mealsViewModel,
+            reachability: appDependencies.reachability
+        )
     }
-    
 }

@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct MealsListView: View {
-    @ObservedObject var viewModel: MealsViewModel
+    @ObservedObject var mealsViewModel: MealsViewModel
     @ObservedObject var detailsViewModel: MealDetailViewModel
-    @ObservedObject var reachability = Reachability()
+    @ObservedObject var reachability:Reachability
     @State private var searchQuery: String = ""
     @State private var category: String = ""
     @State private var selectedSearchOption: SearchOption = .category
     
-    init(networkService: NetworkService) {
-        self.viewModel = MealsViewModel(networkService: networkService)
-        self.detailsViewModel = MealDetailViewModel(networkService: networkService)
+    init(mealDetailViewModel: MealDetailViewModel,mealsViewModel:MealsViewModel,reachability:Reachability) {
+        self.mealsViewModel = mealsViewModel
+        self.detailsViewModel = mealDetailViewModel
+        self.reachability = reachability
     }
     
     var body: some View {
@@ -37,38 +38,38 @@ struct MealsListView: View {
                         .padding(.bottom, 10)
                     
                     if selectedSearchOption == .category {
-                        CategoryPickerView(viewModel: viewModel, searchQuery: $searchQuery, category: $category)
+                        CategoryPickerView(viewModel: mealsViewModel, searchQuery: $searchQuery, category: $category)
                     } else {
                         SearchTextFieldView(
                             selectedSearchOption: selectedSearchOption,
                             searchQuery: $searchQuery,
                             fetchMealsAction: {
-                                viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                                mealsViewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                             }
                         )
                     }
-                    if viewModel.meals.isEmpty {
+                    if mealsViewModel.meals.isEmpty {
                         NoResultsView(selectedSearchOption: selectedSearchOption)
                     } else {
-                        MealsList(viewModel: viewModel, detailsViewModel: detailsViewModel)
+                        MealsList(viewModel: mealsViewModel, detailsViewModel: detailsViewModel)
                     }
                 }
             }
             .padding(.horizontal, 5)
             .onAppear {
                 if reachability.isConnected {
-                    viewModel.fetchCategories()
+                    mealsViewModel.fetchCategories()
                 }
             }
             .onChange(of: searchQuery) { _ , _ in
                 if selectedSearchOption != .area && selectedSearchOption != .ingredient {
-                    viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                    mealsViewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                 }
             }
             .onChange(of: reachability.isConnected) { _, isConnected in
                 if isConnected {
-                    viewModel.fetchCategories()
-                    viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                    mealsViewModel.fetchCategories()
+                    mealsViewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                 }
             }
             .navigationBarTitle("Recipes")
@@ -76,13 +77,13 @@ struct MealsListView: View {
     }
     
     private func handleSearchOptionChange(_ newValue: SearchOption) {
-        viewModel.meals = []
+        mealsViewModel.meals = []
         if newValue == .name {
             searchQuery = ""
-            viewModel.fetchMeals(searchOption: newValue, query: searchQuery)
+            mealsViewModel.fetchMeals(searchOption: newValue, query: searchQuery)
         } else if newValue == .category {
             searchQuery = category
-            viewModel.fetchMeals(searchOption: newValue, query: searchQuery)
+            mealsViewModel.fetchMeals(searchOption: newValue, query: searchQuery)
         } else {
             searchQuery = ""
         }
