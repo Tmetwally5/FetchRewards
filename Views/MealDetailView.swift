@@ -5,4 +5,35 @@
 //  Created by Taha Metwally on 6/6/2024.
 //
 
-import Foundation
+import SwiftUI
+
+struct MealDetailView: View {
+    @ObservedObject var viewModel: MealDetailViewModel
+    let mealId: String
+    
+    init(viewModel: MealDetailViewModel, mealId: String) {
+        self.viewModel = viewModel
+        self.mealId = mealId
+    }
+    
+    var body: some View {
+        VStack {
+            if let meal = viewModel.meal {
+                Text(meal.strMeal ?? "Unknown Meal")
+                    .font(.largeTitle)
+                    .padding()
+                Text(meal.strInstructions ?? "No instructions available.")
+                    .padding()
+                // Display ingredients and measures
+                /*ForEach(meal.ingredients, id: \.self) { ingredient in
+                    Text(ingredient)
+                }*/
+            } else {
+                Text("Loading...")
+            }
+        }
+        .onAppear {
+            viewModel.fetchMealDetail(byId: mealId)
+        }
+    }
+}

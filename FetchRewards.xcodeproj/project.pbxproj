@@ -13,8 +13,6 @@
 		F208EA282C12583F0040F4D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA272C12583F0040F4D1 /* ContentView.swift */; };
 		F208EA2A2C1258400040F4D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F208EA292C1258400040F4D1 /* Assets.xcassets */; };
 		F208EA2D2C1258400040F4D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F208EA2C2C1258400040F4D1 /* Preview Assets.xcassets */; };
-		F208EA2F2C1258400040F4D1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA2E2C1258400040F4D1 /* Persistence.swift */; };
-		F208EA322C1258400040F4D1 /* FetchRewards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F208EA302C1258400040F4D1 /* FetchRewards.xcdatamodeld */; };
 		F208EA3C2C1258400040F4D1 /* FetchRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA3B2C1258400040F4D1 /* FetchRewardsTests.swift */; };
 		F208EA462C1258400040F4D1 /* FetchRewardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA452C1258400040F4D1 /* FetchRewardsUITests.swift */; };
 		F208EA482C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F208EA472C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift */; };
@@ -61,8 +59,6 @@
 		F208EA272C12583F0040F4D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F208EA292C1258400040F4D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F208EA2C2C1258400040F4D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F208EA2E2C1258400040F4D1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		F208EA312C1258400040F4D1 /* FetchRewards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FetchRewards.xcdatamodel; sourceTree = "<group>"; };
 		F208EA372C1258400040F4D1 /* FetchRewardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRewardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F208EA3B2C1258400040F4D1 /* FetchRewardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsTests.swift; sourceTree = "<group>"; };
 		F208EA412C1258400040F4D1 /* FetchRewardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRewardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,8 +158,6 @@
 				F208EA252C12583F0040F4D1 /* FetchRewardsApp.swift */,
 				F208EA272C12583F0040F4D1 /* ContentView.swift */,
 				F208EA292C1258400040F4D1 /* Assets.xcassets */,
-				F208EA2E2C1258400040F4D1 /* Persistence.swift */,
-				F208EA302C1258400040F4D1 /* FetchRewards.xcdatamodeld */,
 				F208EA2B2C1258400040F4D1 /* Preview Content */,
 			);
 			path = FetchRewards;
@@ -478,13 +472,11 @@
 				F2FF5BF92C12861900F00A28 /* MealDetailView.swift in Sources */,
 				F2FF5BEF2C126CD400F00A28 /* MealDetailsResponse.swift in Sources */,
 				F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */,
-				F208EA2F2C1258400040F4D1 /* Persistence.swift in Sources */,
 				F208EA282C12583F0040F4D1 /* ContentView.swift in Sources */,
 				F208EA262C12583F0040F4D1 /* FetchRewardsApp.swift in Sources */,
 				F2FF5BF22C12858C00F00A28 /* MealsViewModel.swift in Sources */,
 				F2673AEF2C12675A00740EFD /* NetworkService.swift in Sources */,
 				F2FF5BF72C1285F700F00A28 /* MealsListView.swift in Sources */,
-				F208EA322C1258400040F4D1 /* FetchRewards.xcdatamodeld in Sources */,
 				F2FF5BF42C1285AD00F00A28 /* MealDetailViewModel.swift in Sources */,
 				F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */,
 			);
@@ -822,19 +814,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F208EA302C1258400040F4D1 /* FetchRewards.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F208EA312C1258400040F4D1 /* FetchRewards.xcdatamodel */,
-			);
-			currentVersion = F208EA312C1258400040F4D1 /* FetchRewards.xcdatamodel */;
-			path = FetchRewards.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F208EA1A2C12583F0040F4D1 /* Project object */;
 }
