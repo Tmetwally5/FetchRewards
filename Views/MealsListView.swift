@@ -4,7 +4,6 @@
 //
 //  Created by Taha Metwally on 6/6/2024.
 //
-
 import SwiftUI
 
 struct MealsListView: View {
@@ -27,16 +26,17 @@ struct MealsListView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                .padding()
                 
-                if selectedSearchOption == .category{
+                if selectedSearchOption == .category {
                     Text("Category list")
-                }else{
+                } else {
                     TextField("Enter \(selectedSearchOption.rawValue.capitalized)", text: $searchQuery)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
                     
                     Button(action: {
-                        viewModel.fetchMeals(category: searchQuery)
+                        viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                     }) {
                         Text("Search")
                             .foregroundColor(.white)
@@ -45,7 +45,6 @@ struct MealsListView: View {
                             .cornerRadius(8)
                     }
                 }
-
                 
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
