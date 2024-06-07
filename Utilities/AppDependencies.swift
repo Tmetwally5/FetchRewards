@@ -15,9 +15,9 @@ class AppDependencies: ObservableObject {
     @Published var mealDetailViewModel: MealDetailViewModel
     @Published var mealsViewModel: MealsViewModel
     @Published var reachability: Reachability
-    let networkService:NetworkService
-    let moyaProvider:MoyaProvider<MyAPI>
-    var  monitor: NWPathMonitor
+    private let networkService:NetworkService
+    private let moyaProvider:MoyaProvider<MyAPI>
+    private let  monitor: NWPathMonitor
 
     init() {
         self.moyaProvider = MoyaProvider<MyAPI>()
