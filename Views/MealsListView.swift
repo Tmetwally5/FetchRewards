@@ -4,13 +4,6 @@
 //
 //  Created by Taha Metwally on 6/6/2024.
 //
-
-//
-//  MealsListView.swift
-//  FetchRewards
-//
-//  Created by Taha Metwally on 6/6/2024.
-//
 import SwiftUI
 
 struct MealsListView: View {
@@ -18,13 +11,14 @@ struct MealsListView: View {
     @ObservedObject var detailsViewModel: MealDetailViewModel
     @State private var searchQuery: String = ""
     @State private var category: String = ""
+    
     @State private var selectedSearchOption: SearchOption = .category
-
+    
     init(networkService: NetworkService) {
         self.viewModel = MealsViewModel(networkService: networkService)
         self.detailsViewModel = MealDetailViewModel(networkService: networkService)
     }
-
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 10) {
@@ -33,7 +27,7 @@ struct MealsListView: View {
                         handleSearchOptionChange(newValue)
                     }
                     .padding(.bottom, 10)
-
+                
                 if selectedSearchOption == .category {
                     CategoryPickerView(viewModel: viewModel, searchQuery: $searchQuery, category: $category)
                 } else {
@@ -45,18 +39,22 @@ struct MealsListView: View {
                         }
                     )
                 }
-
+                
                 if let errorMessage = viewModel.errorMessage {
                     ErrorMessageView(errorMessage: errorMessage)
                 }
-
-                MealsList(viewModel: viewModel, detailsViewModel: detailsViewModel)
+                
+                if viewModel.meals.isEmpty {
+                    NoResultsView(selectedSearchOption: selectedSearchOption)
+                } else {
+                    MealsList(viewModel: viewModel, detailsViewModel: detailsViewModel)
+                }
             }
             .padding(.horizontal, 5)
             .onAppear {
                 viewModel.fetchCategories()
             }
-            .onChange(of: searchQuery) { _ in
+            .onChange(of: searchQuery) { _,_ in
                 if selectedSearchOption != .area && selectedSearchOption != .ingredient {
                     viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                 }
@@ -64,7 +62,7 @@ struct MealsListView: View {
             .navigationBarTitle("Recipes")
         }
     }
-
+    
     private func handleSearchOptionChange(_ newValue: SearchOption) {
         viewModel.meals = []
         if newValue == .name {
@@ -182,6 +180,18 @@ struct MealsList: View {
     }
 }
 
+struct NoResultsView: View {
+    var selectedSearchOption: SearchOption
+
+    var body: some View {
+        Text("We did not find any recipes for this \(selectedSearchOption.rawValue). Try searching for something different.")
+            .foregroundColor(.gray)
+            .multilineTextAlignment(.center)
+            .padding()
+        Spacer()
+    }
+}
+
 enum SearchOption: String, CaseIterable {
     case category
     case name
@@ -190,14 +200,14 @@ enum SearchOption: String, CaseIterable {
 
     func getAsExample() -> String {
         switch self {
-            case .area:
-                return "e.g., Canadian, Mexican"
-            case .category:
-                return "e.g., Seafood, Dessert"
-            case .ingredient:
-                return "e.g., chicken breast, tomatoes"
-            case .name:
-                return "e.g., Arrabiata, Margherita"
+        case .area:
+            return "e.g., Canadian, Mexican"
+        case .category:
+            return "e.g., Seafood, Dessert"
+        case .ingredient:
+            return "e.g., chicken breast, tomatoes"
+        case .name:
+            return "e.g., Arrabiata, Margherita"
         }
     }
 }
