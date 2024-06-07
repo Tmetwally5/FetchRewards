@@ -20,7 +20,7 @@ class MealDetailViewModel: ObservableObject {
     }
     
     func fetchMealDetail(byId id: String) {
-        networkService.fetchMealDetailsByID(meal_ID: id)
+        networkService.fetchMealDetailsByID(mealID: id)
             .receive(on: DispatchQueue.global())
             .handleEvents(receiveSubscription: {[weak self] _ in
                 self?.errorMessage = nil // Clear previous errors
