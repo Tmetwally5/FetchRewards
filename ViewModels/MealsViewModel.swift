@@ -26,6 +26,7 @@ class MealsViewModel: ObservableObject {
                 self?.errorMessage = nil // Clear previous errors
             })
             .sink(receiveCompletion: {[weak self] completion in
+                
                 if case let .failure(error) = completion {
                     self?.errorMessage = "Failed to fetch meal detail: \(error.localizedDescription)"
                 }

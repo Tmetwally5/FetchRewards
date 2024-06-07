@@ -16,34 +16,30 @@ enum MyAPI {
 
 extension MyAPI: TargetType {
     var baseURL: URL { return URL(string: "https://themealdb.com/api/json/v1/1/")! }
+    
     var path: String {
         switch self {
-        case .fetchMealDetailsByID(let meal_ID):
-            return "lookup.php?i=\(meal_ID)"
-        case .fetchMealListByCategory(let category):
-            return "filter.php?c=\(category)"
+        case .fetchMealDetailsByID:
+            return "lookup.php"
+        case .fetchMealListByCategory:
+            return "filter.php"
         }
-
     }
     var method: Moya.Method {
-        switch self {
-        case .fetchMealDetailsByID:
-            return .get
-        case .fetchMealListByCategory:
-            return .get
-        }
+        return .get
     }
     var task: Task {
         switch self {
-        case .fetchMealDetailsByID:
-            return .requestPlain
-        case .fetchMealListByCategory:
-            return .requestPlain
+        case .fetchMealDetailsByID(let mealID):
+            return .requestParameters(parameters: ["i": mealID], encoding: URLEncoding.default)
+        case .fetchMealListByCategory(let category):
+            return .requestParameters(parameters: ["c": category], encoding: URLEncoding.default)
         }
     }
     var headers: [String: String]? {
         return ["Content-type": "application/json"]
     }
+    
     var sampleData: Data {
         return Data()
     }

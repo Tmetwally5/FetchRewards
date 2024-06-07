@@ -34,36 +34,6 @@
             endingLineNumber = "28"
             landmarkName = "fetchMeals(category:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "46173862-70C5-4586-B638-B31D7BD29EEF - 968b217550734fdd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FetchRewards.MealsViewModel.fetchMeals(category: Swift.String) -&gt; ()"
-                  moduleName = "FetchRewards"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tahametwally/Desktop/FetchRewards/ViewModels/MealsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
-               </Location>
-               <Location
-                  uuid = "46173862-70C5-4586-B638-B31D7BD29EEF - f4f272684329eb2c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in FetchRewards.MealsViewModel.fetchMeals(category: Swift.String) -&gt; ()"
-                  moduleName = "FetchRewards"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tahametwally/Desktop/FetchRewards/ViewModels/MealsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -76,40 +46,10 @@
             filePath = "ViewModels/MealsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "fetchMeals(category:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BFFB4A1D-770A-49EA-9C85-3251D2DD820D - f4f272684329eb0d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in FetchRewards.MealsViewModel.fetchMeals(category: Swift.String) -&gt; ()"
-                  moduleName = "FetchRewards"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tahametwally/Desktop/FetchRewards/ViewModels/MealsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29">
-               </Location>
-               <Location
-                  uuid = "BFFB4A1D-770A-49EA-9C85-3251D2DD820D - f4f272684329eb0d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in FetchRewards.MealsViewModel.fetchMeals(category: Swift.String) -&gt; ()"
-                  moduleName = "FetchRewards"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tahametwally/Desktop/FetchRewards/ViewModels/MealsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,8 +62,40 @@
             filePath = "ViewModels/MealsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchMeals(category:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7BE0935-778D-4885-A9DD-209B64378377"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "stubRequest(_:request:callbackQueue:completion:endpoint:stubBehavior:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8257BAF-E616-4057-A6ED-127C097D1446"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewModels/MealsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "fetchMeals(category:)"
             landmarkType = "7">
          </BreakpointContent>
