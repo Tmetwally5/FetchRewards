@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MealsListView: View {
     @ObservedObject var viewModel: MealsViewModel
-    @State var category:String = "Dessert"
+    @State private var searchText: String = ""
+    
     init(networkService: NetworkService) {
         self.viewModel = MealsViewModel(networkService: networkService)
     }
@@ -17,19 +18,32 @@ struct MealsListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                TextField("Enter category", text: $searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button(action: {
+                    viewModel.fetchMeals(category: searchText)
+                }) {
+                    Text("Search")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)
                         .padding()
                 }
+                
                 List(viewModel.meals) { meal in
                     Text(meal.strMeal ?? "")
                 }
-                //.navigationTitle("\(viewModel.category) Recipes")
             }
-            .onAppear {
-                viewModel.fetchMeals(category: category)
-            }
+            .padding()
+            .navigationTitle("Recipes")
         }
     }
 }

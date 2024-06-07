@@ -21,7 +21,7 @@ class MealsViewModel: ObservableObject {
 
     func fetchMeals(category:String) {
         networkService.fetchMealListByCategory(category: category)
-            .receive(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
             .handleEvents(receiveSubscription: {[weak self] _ in
                 self?.errorMessage = nil // Clear previous errors
             })
