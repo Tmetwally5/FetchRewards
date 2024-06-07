@@ -25,6 +25,11 @@ struct MealsListView: View {
                     ForEach(SearchOption.allCases, id: \.self) { option in
                         Text(option.rawValue.capitalized)
                     }
+                }.onChange(of: selectedSearchOption) { _ , newValue in
+                    if newValue == .category{
+                        
+                        viewModel.fetchMeals(searchOption: newValue, query: searchQuery)
+                    }
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 if selectedSearchOption == .category {
@@ -42,7 +47,12 @@ struct MealsListView: View {
                             }
                             .pickerStyle(DefaultPickerStyle())
                             Spacer()
-                        }.background(Color.gray.opacity(0.2)).cornerRadius(8)
+                        }.background(Color.gray.opacity(0.2)).cornerRadius(8)                        .onReceive(viewModel.$categories) { _ in
+                            if !viewModel.categories.isEmpty && searchQuery.isEmpty {
+                                // Update searchQuery with the first category
+                                searchQuery = viewModel.categories[0].strCategory ?? ""
+                            }
+                        }
 
                     } else {
                         ProgressView()
