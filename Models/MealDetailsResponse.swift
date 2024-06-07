@@ -22,13 +22,7 @@ struct MealDetails: Codable, Identifiable {
     }
     let idMeal: String?
     let strMeal: String?
-    let strDrinkAlternate: String?
-    let strCategory: String?
-    let strArea: String?
     let strInstructions: String?
-    let strMealThumb: String?
-    let strTags: String?
-    let strYoutube: String?
    private  let strIngredient1: String?
     let strIngredient2: String?
     let strIngredient3: String?
