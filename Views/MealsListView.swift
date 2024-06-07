@@ -20,41 +20,45 @@ struct MealsListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Search By", selection: $selectedSearchOption) {
+                Picker("Select Search Option", selection: $selectedSearchOption) {
                     ForEach(SearchOption.allCases, id: \.self) { option in
                         Text(option.rawValue.capitalized)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .padding()
+                
                 
                 if selectedSearchOption == .category {
                     // Display category picker
                     if !viewModel.categories.isEmpty {
-                        Picker("Select Category", selection: $searchQuery) {
-                            ForEach(viewModel.categories, id: \.id) { category in
-                                Text(category.strCategory ?? "")
-                                                    .tag(category.strCategory ?? "")
+                        HStack{
+                            Picker("Select Category", selection: $searchQuery) {
+                                ForEach(viewModel.categories, id: \.id) { category in
+                                    Text(category.strCategory ?? "")
+                                                        .tag(category.strCategory ?? "")
+                                }
                             }
-                        }
-                        .pickerStyle(DefaultPickerStyle())
-                        .padding()
+                            .pickerStyle(DefaultPickerStyle())
+                        }.background(Color.yellow)
+
                     } else {
                         ProgressView() // Show loading indicator while categories are being fetched
                     }
                 } else {
-                    TextField("Enter \(selectedSearchOption.rawValue.capitalized)", text: $searchQuery)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    
-                    Button(action: {
-                        viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
-                    }) {
-                        Text("Search")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(8)
+                    HStack{
+                        TextField("Search By \(selectedSearchOption.rawValue.capitalized)", text: $searchQuery)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+                        Button(action: {
+                            viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
+                        }) {
+                            Text("Search")
+                                .foregroundColor(.white)
+                                .padding().frame(width: 100, height: 40) 
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+
                     }
                 }
                 
