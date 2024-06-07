@@ -14,8 +14,8 @@ class Reachability: ObservableObject {
     private var monitor: NWPathMonitor
     private var queue: DispatchQueue
 
-    init() {
-        self.monitor = NWPathMonitor()
+    init(monitor :NWPathMonitor) {
+        self.monitor = monitor
         self.queue = DispatchQueue(label: "NetworkMonitor")
         self.monitor.pathUpdateHandler = { path in
             DispatchQueue.main.async {

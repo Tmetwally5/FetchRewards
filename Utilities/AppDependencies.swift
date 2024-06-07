@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Moya
+import Network
 
 class AppDependencies: ObservableObject {
 
@@ -16,13 +17,15 @@ class AppDependencies: ObservableObject {
     @Published var reachability: Reachability
     let networkService:NetworkService
     let moyaProvider:MoyaProvider<MyAPI>
+    var  monitor: NWPathMonitor
 
     init() {
         self.moyaProvider = MoyaProvider<MyAPI>()
         self.networkService = NetworkService(provider: moyaProvider)
         self.mealDetailViewModel = MealDetailViewModel(networkService: networkService)
         self.mealsViewModel = MealsViewModel(networkService: networkService)
-        self.reachability = Reachability()
+        self.monitor = NWPathMonitor()
+        self.reachability = Reachability(monitor: monitor)
     }
 }
 
