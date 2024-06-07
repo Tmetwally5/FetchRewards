@@ -37,7 +37,7 @@ struct MealsListView: View {
                                                     .tag(category.strCategory ?? "")
                             }
                         }
-                        .pickerStyle(MenuPickerStyle())
+                        .pickerStyle(DefaultPickerStyle())
                         .padding()
                     } else {
                         ProgressView() // Show loading indicator while categories are being fetched
@@ -73,6 +73,8 @@ struct MealsListView: View {
             .padding()
             .navigationTitle("Recipes").onAppear(perform: {
                 viewModel.fetchCategories()
+            }).onChange(of: searchQuery, {
+                viewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
             })
         }
     }
