@@ -74,9 +74,8 @@ struct MealsListView: View {
                         )
                     }
                     
-                    if let errorMessage = viewModel.errorMessage {
-                        ErrorMessageView(errorMessage: errorMessage)
-                    }
+                  
+                    
                     
                     if viewModel.meals.isEmpty {
                         NoResultsView(selectedSearchOption: selectedSearchOption)
@@ -199,15 +198,6 @@ struct SearchTextFieldView: View {
     }
 }
 
-struct ErrorMessageView: View {
-    var errorMessage: String
-
-    var body: some View {
-        Text(errorMessage)
-            .foregroundColor(.red)
-            .padding()
-    }
-}
 
 struct MealsList: View {
     @ObservedObject var viewModel: MealsViewModel

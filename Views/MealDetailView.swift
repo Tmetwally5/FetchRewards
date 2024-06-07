@@ -24,10 +24,6 @@ struct MealDetailView: View {
                     .padding()
                 Text(meal.strInstructions ?? "No instructions available.")
                     .padding()
-                // Display ingredients and measures
-                /*ForEach(meal.ingredients, id: \.self) { ingredient in
-                    Text(ingredient)
-                }*/
             } else {
                 Text("Loading...")
             }

@@ -4,7 +4,6 @@ import Combine
 class MealsViewModel: ObservableObject {
     @Published var meals: [Meal] = []
     @Published var categories: [Category] = []
-    @Published var errorMessage: String? = nil
     
     private var cancellables = Set<AnyCancellable>()
     private let networkService: NetworkService
@@ -29,14 +28,11 @@ class MealsViewModel: ObservableObject {
         
         publisher
             .receive(on: DispatchQueue.main)
-            .handleEvents(receiveSubscription: { [weak self] _ in
-                self?.errorMessage = nil
-            })
             .sink(receiveCompletion: { [weak self] completion in
                 
                 if case let .failure(error) = completion {
                     self?.meals = []
-                    self?.errorMessage = "Failed to fetch meal detail: \(error.localizedDescription)"
+                    print("Failed to fetch meal detail: \(error.localizedDescription)")
                 }
             }, receiveValue: { [weak self] response in
                 self?.meals = response.meals
@@ -48,13 +44,9 @@ class MealsViewModel: ObservableObject {
     
     func fetchCategories() {
         networkService.fetchCategories()
-            .receive(on: DispatchQueue.main)
-            .handleEvents(receiveSubscription: { [weak self] _ in
-                self?.errorMessage = nil
-            })
-            .sink(receiveCompletion: { [weak self] completion in
+            .receive(on: DispatchQueue.main).sink(receiveCompletion: {  completion in
                 if case let .failure(error) = completion {
-                    self?.errorMessage = "Failed to fetch categories: \(error.localizedDescription)"
+                    print("Failed to fetch categories: \(error.localizedDescription)")
                 }
             }, receiveValue: { [weak self] response in
                 self?.categories = response.categories
