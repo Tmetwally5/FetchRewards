@@ -5,33 +5,7 @@
 //  Created by Taha Metwally on 6/6/2024.
 //
 //
-//  MealsListView.swift
-//  FetchRewards
-//
-//  Created by Taha Metwally on 6/6/2024.
-//
 import SwiftUI
-
-import Network
-
-class Reachability: ObservableObject {
-    @Published var isConnected: Bool = true
-
-    private var monitor: NWPathMonitor
-    private var queue: DispatchQueue
-
-    init() {
-        self.monitor = NWPathMonitor()
-        self.queue = DispatchQueue(label: "NetworkMonitor")
-        self.monitor.pathUpdateHandler = { path in
-            DispatchQueue.main.async {
-                self.isConnected = (path.status == .satisfied)
-            }
-        }
-        self.monitor.start(queue: self.queue)
-    }
-}
-
 
 struct MealsListView: View {
     @ObservedObject var viewModel: MealsViewModel
@@ -73,10 +47,6 @@ struct MealsListView: View {
                             }
                         )
                     }
-                    
-                  
-                    
-                    
                     if viewModel.meals.isEmpty {
                         NoResultsView(selectedSearchOption: selectedSearchOption)
                     } else {
@@ -242,11 +212,5 @@ enum SearchOption: String, CaseIterable {
         case .name:
             return "e.g., Arrabiata, Margherita"
         }
-    }
-}
-
-struct MealsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MealsListView(networkService: NetworkService())
     }
 }

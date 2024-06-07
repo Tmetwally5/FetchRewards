@@ -25,6 +25,7 @@
 		F2FF5BF72C1285F700F00A28 /* MealsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BF62C1285F700F00A28 /* MealsListView.swift */; };
 		F2FF5BF92C12861900F00A28 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BF82C12861900F00A28 /* MealDetailView.swift */; };
 		F2FF5BFC2C134E1800F00A28 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BFB2C134E1800F00A28 /* CategoriesResponse.swift */; };
+		F2FF5BFE2C1399EF00F00A28 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BFD2C1399EF00F00A28 /* Reachability.swift */; };
 		F6139D8D30C37DCEF7F2D9D6 /* Pods_FetchRewards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211C220FE6C7AC1E937E97F5 /* Pods_FetchRewards.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		F2FF5BF62C1285F700F00A28 /* MealsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsListView.swift; sourceTree = "<group>"; };
 		F2FF5BF82C12861900F00A28 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		F2FF5BFB2C134E1800F00A28 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		F2FF5BFD2C1399EF00F00A28 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		F2FF5BFA2C12867200F00A28 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F2FF5BFD2C1399EF00F00A28 /* Reachability.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			files = (
 				F2FF5BF92C12861900F00A28 /* MealDetailView.swift in Sources */,
 				F2FF5BEF2C126CD400F00A28 /* MealDetailsResponse.swift in Sources */,
+				F2FF5BFE2C1399EF00F00A28 /* Reachability.swift in Sources */,
 				F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */,
 				F208EA282C12583F0040F4D1 /* ContentView.swift in Sources */,
 				F208EA262C12583F0040F4D1 /* FetchRewardsApp.swift in Sources */,
