@@ -34,6 +34,24 @@ struct MealDetails: Codable, Identifiable {
     /// The name of the meal.
     let strMeal: String?
     
+    /// The URL string for the meal thumbnail image.
+    let strMealThumb: String?
+    
+    /// Additional tags associated with the meal.
+    let strTags: String?
+    
+    /// The URL string for a YouTube video demonstrating the meal preparation.
+    let strYoutube: String?
+    
+    /// An alternate drink suggestion for the meal.
+    let strDrinkAlternate: String?
+    
+    /// The category of the meal.
+    let strCategory: String?
+    
+    /// The area or cuisine type associated with the meal.
+    let strArea: String?
+    
     /// The instructions for preparing the meal.
     let strInstructions: String?
     

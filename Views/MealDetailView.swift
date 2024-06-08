@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 /**
  The `MealDetailView` struct represents the detail view of a meal, displaying information such as meal name, instructions, and ingredients.
  
@@ -64,6 +64,32 @@ struct MealInfoView: View {
                 .accessibilityLabel(meal.strMeal ?? String.Localization.unknown_meal)
                 .foregroundColor(.primary)
             
+            // Display the meal image, area, category, and video link.
+
+            
+            VStack{
+                if let mealThumb = meal.strMealThumb {
+                    KFImage(URL(string: mealThumb))
+                        .resizable().frame(height: 200)
+                        .scaledToFit()
+                        .cornerRadius(8)
+                        .padding()
+                }
+                if let strCategory = meal.strCategory{
+                    Text("Category: \(strCategory)")
+                        .font(.headline)
+                }
+                if let strArea = meal.strArea{
+                    Text("Area: \(strArea)")
+                        .font(.headline)
+                }
+                if let strYoutube = meal.strYoutube, let url = URL(string: strYoutube) {
+                    Link("Watch the Video", destination: url)
+                        .font(.headline)
+                }
+            }
+
+            
             Divider()
             
             // Display meal instructions.
@@ -77,9 +103,9 @@ struct MealInfoView: View {
                 .foregroundColor(.primary)
             
             Divider()
-            
             // Display list of ingredients.
             IngredientsListView(meal: meal)
+
         }
     }
 }

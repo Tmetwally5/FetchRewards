@@ -12,6 +12,9 @@
         }
       }
     },
+    "Area: %@" : {
+
+    },
     "category_example" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22,6 +25,9 @@
           }
         }
       }
+    },
+    "Category: %@" : {
+
     },
     "ingredient_example" : {
       "extractionState" : "manual",
@@ -163,6 +169,9 @@
           }
         }
       }
+    },
+    "Watch the Video" : {
+
     }
   },
   "version" : "1.0"
