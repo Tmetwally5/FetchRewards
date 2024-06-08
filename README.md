@@ -1,1 +1,1 @@
-<img src="./Documentation_Images/a1.png" alt="Alt text" width="200" height="15"/>
+<img src="./Documentation_Images/a1.png" alt="Alt text" width="350" height="600"/>
