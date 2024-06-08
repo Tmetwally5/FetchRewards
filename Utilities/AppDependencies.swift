@@ -26,13 +26,13 @@ class AppDependencies: ObservableObject {
     @Published var reachability: Reachability
 
     /// The `NetworkService` instance used to manage network requests.
-    private let networkService: NetworkService
+    let networkService: NetworkService
 
     /// The `MoyaProvider` instance used to handle API requests.
-    private let moyaProvider: MoyaProvider<MyAPI>
+    let moyaProvider: MoyaProvider<MyAPI>
 
     /// The `NWPathMonitor` instance used to monitor network path changes.
-    private let monitor: NWPathMonitor
+    let monitor: NWPathMonitor
 
     /**
      Initializes a new `AppDependencies` instance, setting up all necessary dependencies for the application.
