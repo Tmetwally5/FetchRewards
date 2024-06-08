@@ -107,5 +107,20 @@ extension String {
         static var loading: String {
             NSLocalizedString("Loading...", comment: "")
         }
+        
+        /// Localized string for category.
+        static var category: String {
+            NSLocalizedString("category", comment: "")
+        }
+        
+        /// Localized string for area.
+        static var area: String {
+            NSLocalizedString("area", comment: "")
+        }
+        
+        /// Localized string for watch video.
+        static var watch_video: String {
+            NSLocalizedString("watch_video", comment: "")
+        }
     }
 }

@@ -75,15 +75,15 @@ struct MealInfoView: View {
                         .padding()
                 }
                 if let strCategory = meal.strCategory {
-                    Text("Category: \(strCategory)")
+                    Text("\(String.Localization.category) \(strCategory)")
                         .font(.headline)
                 }
                 if let strArea = meal.strArea {
-                    Text("Area: \(strArea)")
+                    Text("\(String.Localization.area) \(strArea)")
                         .font(.headline)
                 }
                 if let strYoutube = meal.strYoutube, let url = URL(string: strYoutube) {
-                    Link("Watch the Video", destination: url)
+                    Link(String.Localization.watch_video, destination: url)
                         .font(.headline)
                 }
             }

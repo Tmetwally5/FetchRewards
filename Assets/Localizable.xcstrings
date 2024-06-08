@@ -1,6 +1,27 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "area" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Area:"
+          }
+        }
+      }
+    },
     "area_example" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -12,8 +33,26 @@
         }
       }
     },
-    "Area: %@" : {
-
+    "category" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category:"
+          }
+        }
+      }
+    },
+    "Category" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category:"
+          }
+        }
+      }
     },
     "category_example" : {
       "extractionState" : "manual",
@@ -25,9 +64,6 @@
           }
         }
       }
-    },
-    "Category: %@" : {
-
     },
     "ingredient_example" : {
       "extractionState" : "manual",
@@ -170,8 +206,16 @@
         }
       }
     },
-    "Watch the Video" : {
-
+    "watch_video" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Watch the Video"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
