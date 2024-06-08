@@ -1,1 +1,1 @@
-![Alt text](./Documentation_Images/a1.jpg)
+![Alt text](./Documentation_Images/a1.png)
