@@ -45,17 +45,25 @@ class MealsViewModelTests: XCTestCase {
         }
         
         override func fetchMealListByCountry(country: String) -> AnyPublisher<MealsResponse, Error> {
+            
+            
             if shouldFail {
                 return Fail(error: NSError(domain: "MockError", code: 123, userInfo: nil)).eraseToAnyPublisher()
             } else {
                 let mealsResponse = MealsResponse(meals: getMealList())
                 return Result.Publisher(mealsResponse).eraseToAnyPublisher()
             }
+            
+            
         }
         
         override func fetchCategories() -> AnyPublisher<CategoriesResponse, Error> {
-            let categoriesResponse = CategoriesResponse(categories: getCagegory())
-            return Result.Publisher(categoriesResponse).eraseToAnyPublisher()
+            if shouldFail {
+                return Fail(error: NSError(domain: "MockError", code: 123, userInfo: nil)).eraseToAnyPublisher()
+            } else {
+                let categoriesResponse = CategoriesResponse(categories: getCagegory())
+                return Result.Publisher(categoriesResponse).eraseToAnyPublisher()
+            }
         }
         
         private func getMealList() -> [Meal] {
@@ -134,11 +142,20 @@ class MealsViewModelTests: XCTestCase {
          waitForExpectations(timeout: 2.0, handler: nil)
      }
     
-    func testFetchCategories() {
+    func testFetchCategoriesSuccess(){
+        testFetchCategories(shouldFail:false)
+    }
+    
+    func testFetchCategoriesFailure(shouldFail:Bool){
+        testFetchCategories(shouldFail:true)
+    }
+    
+    private func testFetchCategories(shouldFail:Bool) {
        
         let expectation = self.expectation(description: "Fetch the meal's categories")
         
         let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
+        (viewModel.networkService as? MockNetworkService)?.shouldFail = shouldFail
 
         viewModel.fetchCategories()
         
