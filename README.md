@@ -3,13 +3,17 @@
 ### Dark Mode Design
 
 <div style="display: flex; flex-wrap: wrap;">
-    <img src="./Documentation_Images/d1.jpeg" alt="Dark mode screenshot 1" width="200" height="300"/>
-    <img src="./Documentation_Images/d2.jpeg" alt="Dark mode screenshot 2" width="200" height="300"/>
-    <img src="./Documentation_Images/d3.jpeg" alt="Dark mode screenshot 3" width="200" height="300"/>
-    <img src="./Documentation_Images/d4.jpeg" alt="Dark mode screenshot 4" width="200" height="300"/>
-    <img src="./Documentation_Images/d5.jpeg" alt="Dark mode screenshot 5" width="200" height="300"/>
-    <img src="./Documentation_Images/d6.jpeg" alt="Dark mode screenshot 6" width="200" height="300"/>
-    <img src="./Documentation_Images/d7.jpeg" alt="Dark mode screenshot 7" width="200" height="300"/>
+    <img src="./Documentation_Images/d1.jpeg" alt="Dark mode screenshot 1" width="100" height="150"/>
+    <img src="./Documentation_Images/d2.png" alt="Dark mode screenshot 2" width="100" height="150"/>
+    <img src="./Documentation_Images/d3.png" alt="Dark mode screenshot 3" width="100" height="150"/>
+    <img src="./Documentation_Images/d4.png" alt="Dark mode screenshot 4" width="100" height="150"/>
+    <img src="./Documentation_Images/d5.png" alt="Dark mode screenshot 5" width="100" height="150"/>
+    <img src="./Documentation_Images/d6.png" alt="Dark mode screenshot 6" width="100" height="150"/>
+    <img src="./Documentation_Images/d7.png" alt="Dark mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/d8.png" alt="Dark mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/d9.png" alt="Dark mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/d10.png" alt="Dark mode screenshot 7" width="100" height="150"/>
+    
 </div>
 
 ### Light Mode Design
