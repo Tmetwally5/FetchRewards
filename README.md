@@ -3,13 +3,13 @@
 The app design for dark mode:
 
 <div style="display: flex; flex-wrap: wrap;">
-    <img src="./Documentation_Images/d1.png" alt="Alt text" width="200" height="300"/>
-    <img src="./Documentation_Images/d2.png" alt="Alt text" width="200" height="300"/>
-    <img src="./Documentation_Images/d3.png" alt="Alt text" width="200" height="300"/>
-    <img src="./Documentation_Images/d4.png" alt="Alt text" width="200" height="300"/>
-    <img src="./Documentation_Images/d5.png" alt="Alt text" width="200" height="300"/>
-    <img src="./Documentation_Images/d6.png" alt="Alt text" width="200" height="300"/>
-    <img src="./Documentation_Images/d7.png" alt="Alt text" width="200" height="300"/>
+    <img src="./Documentation_Images/d1.jpeg" alt="Alt text" width="200" height="300"/>
+    <img src="./Documentation_Images/d2.jpeg" alt="Alt text" width="200" height="300"/>
+    <img src="./Documentation_Images/d3.jpeg" alt="Alt text" width="200" height="300"/>
+    <img src="./Documentation_Images/d4.jpeg" alt="Alt text" width="200" height="300"/>
+    <img src="./Documentation_Images/d5.jpeg" alt="Alt text" width="200" height="300"/>
+    <img src="./Documentation_Images/d6.jpeg" alt="Alt text" width="200" height="300"/>
+    <img src="./Documentation_Images/d7.jpeg" alt="Alt text" width="200" height="300"/>
 </div>
 
 The app design not dark mode:
