@@ -74,7 +74,7 @@ struct IngredientsListView: View {
                 .foregroundColor(.primary)
                 .accessibilityLabel(String.Localization.ingredients)
 
-            ForEach(meal.getIngredientMeasurementListxx(), id: \.0) { ingredient, measure in
+            ForEach(meal.getIngredientMeasurementList(), id: \.0) { ingredient, measure in
                 HStack {
                     Text(ingredient)
                         .font(.body)
