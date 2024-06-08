@@ -33,14 +33,14 @@ struct FetchRewardsApp: App {
                                 showLaunchScreen = false
                             }
                         }
-                    }
+                    }.accessibility(identifier: "launch_screen")
             } else {
                 // Display the main content of the application after the launch screen.
                 MealsListView()
                     .environmentObject(appDependencies.mealDetailViewModel)
                     .environmentObject(appDependencies.mealsViewModel)
                     .environmentObject(appDependencies.reachability)
-                    .environment(\.sizeCategory, .large)
+                    .environment(\.sizeCategory, .large).accessibility(identifier: "meals_list_view")
             }
         }
     }

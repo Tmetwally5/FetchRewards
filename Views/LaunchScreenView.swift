@@ -22,6 +22,6 @@ struct LaunchScreenView: View {
                 .aspectRatio(contentMode: .fit)
                 .padding()
             Spacer()
-        }
+        }.accessibility(identifier: "launch_screen")
     }
 }
