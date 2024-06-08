@@ -4,7 +4,6 @@
 //
 //  Created by Taha Metwally on 6/6/2024.
 //
-
 import SwiftUI
 
 struct MealDetailView: View {
@@ -15,7 +14,6 @@ struct MealDetailView: View {
         VStack {
             contentView
                 .accessibilityElement(children: .ignore)
-                
         }
         .onAppear {
             viewModel.fetchMealDetail(byId: mealId)
@@ -29,11 +27,9 @@ struct MealDetailView: View {
             ScrollView {
                 MealInfoView(meal: meal)
             }
-            .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
         } else {
             Text(String.Localization.loading)
                 .accessibilityLabel(String.Localization.loading)
-                .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
         }
     }
 }
@@ -46,22 +42,23 @@ struct MealInfoView: View {
             Text(meal.strMeal ?? String.Localization.unknown_meal)
                 .font(.largeTitle)
                 .accessibilityLabel(meal.strMeal ?? String.Localization.unknown_meal)
+                .foregroundColor(.primary) 
             
             Divider()
             
             Text(String.Localization.instructions)
                 .font(.headline)
                 .accessibilityLabel(String.Localization.instructions)
+                .foregroundColor(.primary)
             
             Text(meal.strInstructions ?? String.Localization.no_instructions_available)
                 .padding()
+                .foregroundColor(.primary)
             
             Divider()
             
             IngredientsListView(meal: meal)
         }
-        .accessibilityElement(children: .contain)
-        .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
     }
 }
 
@@ -104,7 +101,5 @@ struct IngredientsListView: View {
                 .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
         )
         .padding()
-        .accessibilityElement(children: .contain)
-        .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
     }
 }

@@ -7,7 +7,6 @@
 //
 import SwiftUI
 
-
 struct MealsListView: View {
     @EnvironmentObject var mealsViewModel: MealsViewModel
     @EnvironmentObject var detailsViewModel: MealDetailViewModel
@@ -69,6 +68,8 @@ struct MealsListView: View {
                 }
             }
             .navigationBarTitle(String.Localization.recipes)
+            .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
+           
         }
         .navigationViewStyle(StackNavigationViewStyle()) // Enable navigation on iPad
     }
@@ -103,14 +104,10 @@ struct SearchOptionPicker: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
+            
         }
     }
 }
-
-
-
-
-
 struct CategoryPickerView: View {
     @ObservedObject var viewModel: MealsViewModel
     @Binding var searchQuery: String
@@ -136,6 +133,7 @@ struct CategoryPickerView: View {
                     .background(Color.blue)
                     .cornerRadius(8)
                     .tint(.white)
+                    
                 }
                 Spacer()
             }
@@ -148,10 +146,13 @@ struct CategoryPickerView: View {
             .onChange(of: searchQuery) { _, newValue in
                 category = newValue
             }
+            .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
+           
         } else {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
                 .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
+                
         }
     }
 }
@@ -184,12 +185,6 @@ struct SearchTextFieldView: View {
     }
 }
 
-
-
-
-
-
-
 struct MealsList: View {
     @ObservedObject var viewModel: MealsViewModel
     @ObservedObject var detailsViewModel: MealDetailViewModel
@@ -218,7 +213,6 @@ struct NoResultsView: View {
         Spacer()
     }
 }
-
 
 enum SearchOption: String, CaseIterable {
     case category

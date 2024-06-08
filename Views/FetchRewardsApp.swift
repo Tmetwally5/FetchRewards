@@ -17,7 +17,7 @@ struct FetchRewardsApp: App {
             if showLaunchScreen {
                 LaunchScreenView()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { 
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             withAnimation {
                                 showLaunchScreen = false
                             }
@@ -25,7 +25,10 @@ struct FetchRewardsApp: App {
                     }
             } else {
                 MealsListView()
-                    .environmentObject(appDependencies.mealDetailViewModel).environmentObject(appDependencies.mealsViewModel).environmentObject(appDependencies.reachability)
+                    .environmentObject(appDependencies.mealDetailViewModel)
+                    .environmentObject(appDependencies.mealsViewModel)
+                    .environmentObject(appDependencies.reachability)
+                    .environment(\.sizeCategory, .large)
             }
         }
     }
