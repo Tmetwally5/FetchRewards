@@ -81,7 +81,7 @@ class MealsViewModel: ObservableObject {
             }, receiveValue: { [weak self] response in
                 self?.categories = response.categories
                     .compactMap { $0 }
-                    .sorted { ($0.strCategory ?? "") < ($1.strCategory ?? "") }
+                    
             })
             .store(in: &cancellables)
     }

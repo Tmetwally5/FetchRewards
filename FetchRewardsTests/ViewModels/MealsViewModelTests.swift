@@ -60,11 +60,27 @@ class MealsViewModelTests: XCTestCase {
 
     
     func testFetchMealsByCategory() {
-        let expectation = self.expectation(description: "Fetch meals by category")
+        testFetchMeals(searchOption: .category, query: "Test Category")
+    }
+
+    func testFetchMealsByName() {
+        testFetchMeals(searchOption: .name, query: "Test Category")
+    }
+
+    func testFetchMealsByIngredient() {
+        testFetchMeals(searchOption: .ingredient, query: "Test Category")
+    }
+
+    func testFetchMealsByCountry() {
+        testFetchMeals(searchOption: .area, query: "Test Category")
+    }
+
+    private func testFetchMeals(searchOption: SearchOption, query: String) {
+        let expectation = self.expectation(description: "Fetch meals")
         
         let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
         
-        viewModel.fetchMeals(searchOption: .category, query: "Test Category")
+        viewModel.fetchMeals(searchOption: searchOption, query: query)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             XCTAssertEqual(viewModel.meals.count, 4)
@@ -77,55 +93,23 @@ class MealsViewModelTests: XCTestCase {
         
         waitForExpectations(timeout: 2.0, handler: nil)
     }
-
-    func testFetchMealsByName() {
-        // Given
-        let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
-        
-        // When
-        viewModel.fetchMeals(searchOption: .name, query: "Test Category")
-        
-        // Then
-        XCTAssertEqual(viewModel.meals.count, 4)
-        XCTAssertEqual(viewModel.meals.first?.strMeal, "Meal 1")
-    }
-    
-    func testFetchMealsByIngredient() {
-        // Given
-        let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
-        
-        // When
-        viewModel.fetchMeals(searchOption: .ingredient, query: "Test Category")
-        
-        // Then
-        XCTAssertEqual(viewModel.meals.count, 4)
-        XCTAssertEqual(viewModel.meals.first?.strMeal, "Meal 1")
-    }
-    
-    func testFetchMealsByCountry() {
-        // Given
-        let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
-        
-        // When
-        viewModel.fetchMeals(searchOption: .area, query: "Test Category")
-        
-        // Then
-        XCTAssertEqual(viewModel.meals.count, 4)
-        XCTAssertEqual(viewModel.meals.first?.strMeal, "Meal 1")
-    }
-    
-    
-    // Similar tests for other search options (name, ingredient, country)...
     
     func testFetchCategories() {
-        // Given
-        let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
+       
+        let expectation = self.expectation(description: "Fetch the meal's categories")
         
-        // When
+        let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
+
         viewModel.fetchCategories()
         
-        // Then
-        XCTAssertEqual(viewModel.categories.count, 3)
-        XCTAssertEqual(viewModel.categories.first?.strCategory, "Category 1")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            XCTAssertEqual(viewModel.categories.count, 3)
+            XCTAssertEqual(viewModel.categories.first?.id, "1")
+            XCTAssertEqual(viewModel.categories.first?.strCategory, "Italian")
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 2.0, handler: nil)
+        
     }
 }
