@@ -64,8 +64,6 @@ struct MealDetails: Codable, Identifiable {
     let strMeasure19: String?
     let strMeasure20: String?
  
-    
-    /// Get a list of ingredients along with their measurements
     func getIngredientMeasurementListxx() -> [(String, String)] {
         var list: [(String, String)] = []
         

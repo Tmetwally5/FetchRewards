@@ -28,4 +28,3 @@ class AppDependencies: ObservableObject {
         self.reachability = Reachability(monitor: monitor)
     }
 }
-

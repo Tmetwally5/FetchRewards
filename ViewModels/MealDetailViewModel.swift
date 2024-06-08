@@ -31,5 +31,3 @@ class MealDetailViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 }
-
-
