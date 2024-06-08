@@ -27,7 +27,7 @@ struct MealDetailView: View {
                 MealInfoView(meal: meal)
             }
         } else {
-            Text("Loading...")
+            Text(String.Localization.Loading)
         }
     }
 }
@@ -37,12 +37,12 @@ struct MealInfoView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text(meal.strMeal ?? "Unknown Meal")
+            Text(meal.strMeal ?? String.Localization.unknown_meal)
                 .font(.largeTitle)
             Divider()
-            Text("Instructions")
+            Text(String.Localization.Instructions)
                 .font(.headline)
-            Text(meal.strInstructions ?? "No instructions available.").padding()
+            Text(meal.strInstructions ?? String.Localization.no_instructions_available).padding()
             Divider()
             IngredientsListView(meal: meal)
         }
@@ -54,7 +54,7 @@ struct IngredientsListView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Ingredients")
+            Text(String.Localization.Ingredients)
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom, 8)

@@ -57,5 +57,22 @@ extension String {
         class var name_example: String {
             return NSLocalizedString("name_example", comment: "")
         }
+        class var no_instructions_available:String{
+            return NSLocalizedString("no_instructions_available", comment: "")
+        }
+        class var unknown_meal:String{
+            return NSLocalizedString("unknown_meal", comment: "")
+        }
+        class var Ingredients:String{
+            return NSLocalizedString("Ingredients", comment: "")
+        }
+        class var Instructions:String{
+            return NSLocalizedString("Instructions", comment: "")
+        }
+        class var Loading:String{
+            return NSLocalizedString("Loading...", comment: "")
+        }
     }
 }
+
+//no_instructions_available

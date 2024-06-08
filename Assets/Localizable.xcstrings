@@ -54,6 +54,17 @@
         }
       }
     },
+    "no_instructions_available" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No instructions available."
+          }
+        }
+      }
+    },
     "no_internet_connection" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -138,6 +149,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select Search Option"
+          }
+        }
+      }
+    },
+    "unknown_meal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Meal"
           }
         }
       }
