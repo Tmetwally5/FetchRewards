@@ -4,10 +4,20 @@
 //
 //  Created by Taha Metwally on 6/6/2024.
 //
+
 import SwiftUI
 
+/**
+ The `MealDetailView` struct represents the detail view of a meal, displaying information such as meal name, instructions, and ingredients.
+ 
+ It fetches the meal detail upon appearance and dynamically updates the view when the meal data is available.
+ */
 struct MealDetailView: View {
+    
+    /// The view model responsible for managing the meal detail data.
     @ObservedObject var viewModel: MealDetailViewModel
+    
+    /// The ID of the meal to fetch and display details for.
     let mealId: String
     
     var body: some View {
@@ -16,36 +26,47 @@ struct MealDetailView: View {
                 .accessibilityElement(children: .ignore)
         }
         .onAppear {
+            // Fetch the meal detail data when the view appears.
             viewModel.fetchMealDetail(byId: mealId)
         }
         .accessibilityElement(children: .contain)
     }
     
+    /// The main content view of the meal detail screen.
     @ViewBuilder
     private var contentView: some View {
         if let meal = viewModel.meal {
+            // Display meal information if available.
             ScrollView {
                 MealInfoView(meal: meal)
             }
         } else {
+            // Display a loading indicator if meal information is being fetched.
             Text(String.Localization.loading)
                 .accessibilityLabel(String.Localization.loading)
         }
     }
 }
 
+/**
+ The `MealInfoView` struct displays detailed information about a meal, including its name, instructions, and ingredients.
+ */
 struct MealInfoView: View {
+    
+    /// The meal details to display.
     let meal: MealDetails
     
     var body: some View {
         VStack(spacing: 20) {
+            // Display meal name.
             Text(meal.strMeal ?? String.Localization.unknown_meal)
                 .font(.largeTitle)
                 .accessibilityLabel(meal.strMeal ?? String.Localization.unknown_meal)
-                .foregroundColor(.primary) 
+                .foregroundColor(.primary)
             
             Divider()
             
+            // Display meal instructions.
             Text(String.Localization.instructions)
                 .font(.headline)
                 .accessibilityLabel(String.Localization.instructions)
@@ -57,16 +78,23 @@ struct MealInfoView: View {
             
             Divider()
             
+            // Display list of ingredients.
             IngredientsListView(meal: meal)
         }
     }
 }
 
+/**
+ The `IngredientsListView` struct displays a list of ingredients and their measurements for a meal.
+ */
 struct IngredientsListView: View {
+    
+    /// The meal details containing the ingredients to display.
     let meal: MealDetails
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            // Display section header for ingredients.
             Text(String.Localization.ingredients)
                 .font(.title2)
                 .fontWeight(.bold)
@@ -75,6 +103,7 @@ struct IngredientsListView: View {
                 .accessibilityLabel(String.Localization.ingredients)
 
             ForEach(meal.getIngredientMeasurementList(), id: \.0) { ingredient, measure in
+                // Display each ingredient and its measurement.
                 HStack {
                     Text(ingredient)
                         .font(.body)
