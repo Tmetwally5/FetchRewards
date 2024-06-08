@@ -17,7 +17,7 @@ struct FetchRewardsApp: App {
             if showLaunchScreen {
                 LaunchScreenView()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { 
                             withAnimation {
                                 showLaunchScreen = false
                             }

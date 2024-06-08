@@ -39,17 +39,13 @@ struct MealInfoView: View {
         VStack(spacing: 20) {
             Text(meal.strMeal ?? "Unknown Meal")
                 .font(.largeTitle)
-            
             Divider()
-            Text("Instructions:")
+            Text("Instructions")
                 .font(.headline)
-            
-            Text(meal.strInstructions ?? "No instructions available.")
+            Text(meal.strInstructions ?? "No instructions available.").padding()
             Divider()
-            
             IngredientsListView(meal: meal)
         }
-        .padding()
     }
 }
 
@@ -76,8 +72,8 @@ struct IngredientsListView: View {
                         .font(.body)
                         .foregroundColor(.primary)
                 }
-                .padding(.vertical, 8)
-                .padding(.horizontal, 12)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 5)
                 .background(Color(UIColor.systemGray6))
                 .cornerRadius(8)
             }

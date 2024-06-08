@@ -23,7 +23,7 @@ struct MealDetails: Codable, Identifiable {
     let idMeal: String?
     let strMeal: String?
     let strInstructions: String?
-   private  let strIngredient1: String?
+    let strIngredient1: String?
     let strIngredient2: String?
     let strIngredient3: String?
     let strIngredient4: String?
@@ -63,10 +63,7 @@ struct MealDetails: Codable, Identifiable {
     let strMeasure18: String?
     let strMeasure19: String?
     let strMeasure20: String?
-    let strSource: String?
-    let strImageSource: String?
-    let strCreativeCommonsConfirmed: String?
-    let dateModified: String?
+ 
     
     /// Get a list of ingredients along with their measurements
     func getIngredientMeasurementListxx() -> [(String, String)] {

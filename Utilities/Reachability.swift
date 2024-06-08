@@ -17,9 +17,9 @@ class Reachability: ObservableObject {
     init(monitor :NWPathMonitor) {
         self.monitor = monitor
         self.queue = DispatchQueue(label: "NetworkMonitor")
-        self.monitor.pathUpdateHandler = { path in
-            DispatchQueue.main.async {
-                self.isConnected = (path.status == .satisfied)
+        self.monitor.pathUpdateHandler = {[weak self] path in
+            DispatchQueue.main.async { [weak self] in
+                self?.isConnected = (path.status == .satisfied)
             }
         }
         self.monitor.start(queue: self.queue)
