@@ -92,7 +92,7 @@ struct SearchOptionPicker: View {
             Text("Search By")
             Picker("Select Search Option", selection: $selectedSearchOption) {
                 ForEach(SearchOption.allCases, id: \.self) { option in
-                    Text(option.rawValue.capitalized)
+                    Text(option.rawValue.capitalized).tag(option.rawValue.capitalized)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
@@ -111,17 +111,19 @@ struct CategoryPickerView: View {
                 Spacer()
                 Text("Select a category")
                 Spacer()
-                Picker("Select Category", selection: $searchQuery) {
-                    ForEach(viewModel.categories, id: \.id) { category in
-                        Text(category.strCategory ?? "")
-                            .tag(category.strCategory ?? "")
+                if !searchQuery.isEmpty{
+                    Picker("Select Category", selection: $searchQuery) {
+                        ForEach(viewModel.categories, id: \.id) { category in
+                            Text(category.strCategory ?? "").tag(category.strCategory ?? "")
+                                
+                        }
                     }
+                    .pickerStyle(DefaultPickerStyle())
+                    .background(Color.blue)
+                    .cornerRadius(8)
+                    .tint(.white)
                 }
-                .pickerStyle(DefaultPickerStyle())
-                
-                .background(Color.blue)
-                .cornerRadius(8)
-                .tint(.white)
+
                 Spacer()
             }
             
