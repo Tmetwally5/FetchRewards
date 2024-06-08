@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+
 /**
  The `MealDetailView` struct represents the detail view of a meal, displaying information such as meal name, instructions, and ingredients.
  
@@ -49,7 +50,7 @@ struct MealDetailView: View {
 }
 
 /**
- The `MealInfoView` struct displays detailed information about a meal, including its name, instructions, and ingredients.
+ The `MealInfoView` struct displays detailed information about a meal, including its name, instructions, ingredients, and additional details like category, area, and video link.
  */
 struct MealInfoView: View {
     
@@ -65,8 +66,6 @@ struct MealInfoView: View {
                 .foregroundColor(.primary)
             
             // Display the meal image, area, category, and video link.
-
-            
             VStack{
                 if let mealThumb = meal.strMealThumb {
                     KFImage(URL(string: mealThumb))
@@ -75,11 +74,11 @@ struct MealInfoView: View {
                         .cornerRadius(8)
                         .padding()
                 }
-                if let strCategory = meal.strCategory{
+                if let strCategory = meal.strCategory {
                     Text("Category: \(strCategory)")
                         .font(.headline)
                 }
-                if let strArea = meal.strArea{
+                if let strArea = meal.strArea {
                     Text("Area: \(strArea)")
                         .font(.headline)
                 }
@@ -88,7 +87,6 @@ struct MealInfoView: View {
                         .font(.headline)
                 }
             }
-
             
             Divider()
             
@@ -103,9 +101,9 @@ struct MealInfoView: View {
                 .foregroundColor(.primary)
             
             Divider()
+            
             // Display list of ingredients.
             IngredientsListView(meal: meal)
-
         }
     }
 }
