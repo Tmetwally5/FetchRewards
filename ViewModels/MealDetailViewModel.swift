@@ -11,7 +11,6 @@ import Combine
 class MealDetailViewModel: ObservableObject {
     
     @Published var meal: MealDetails? = nil
-    @Published var errorMessage: String? = nil
     private var cancellables = Set<AnyCancellable>()
     private var networkService:NetworkService
     
@@ -22,12 +21,9 @@ class MealDetailViewModel: ObservableObject {
     func fetchMealDetail(byId id: String) {
         networkService.fetchMealDetailsByID(mealID: id)
             .receive(on: DispatchQueue.main)
-            .handleEvents(receiveSubscription: {[weak self] _ in
-                self?.errorMessage = nil // Clear previous errors
-            })
-            .sink(receiveCompletion: {[weak self] completion in
+            .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
-                    self?.errorMessage = "Failed to fetch meal detail: \(error.localizedDescription)"
+                    print("Failed to fetch meal detail: \(error.localizedDescription)")
                 }
             }, receiveValue: {[weak self] response in
                 self?.meal = response.meals.first

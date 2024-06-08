@@ -18,7 +18,7 @@
 		F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2673AEC2C1266CF00740EFD /* MyAPI.swift */; };
 		F2673AEF2C12675A00740EFD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2673AEE2C12675A00740EFD /* NetworkService.swift */; };
 		F2D783B72C13EE11001BF9A3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */; };
-		F2D783B92C13EF90001BF9A3 /* extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D783B82C13EF90001BF9A3 /* extension + String.swift */; };
+		F2D783B92C13EF90001BF9A3 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D783B82C13EF90001BF9A3 /* String+Localization.swift */; };
 		F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */; };
 		F2FF5BEF2C126CD400F00A28 /* MealDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BEE2C126CD400F00A28 /* MealDetailsResponse.swift */; };
 		F2FF5BF22C12858C00F00A28 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BF12C12858C00F00A28 /* MealsViewModel.swift */; };
@@ -70,7 +70,7 @@
 		F2673AEC2C1266CF00740EFD /* MyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPI.swift; sourceTree = "<group>"; };
 		F2673AEE2C12675A00740EFD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		F2D783B82C13EF90001BF9A3 /* extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension + String.swift"; sourceTree = "<group>"; };
+		F2D783B82C13EF90001BF9A3 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsResponse.swift; sourceTree = "<group>"; };
 		F2FF5BEE2C126CD400F00A28 /* MealDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsResponse.swift; sourceTree = "<group>"; };
 		F2FF5BF12C12858C00F00A28 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 			children = (
 				F2FF5BFD2C1399EF00F00A28 /* Reachability.swift */,
 				F2FF5C002C139FA500F00A28 /* AppDependencies.swift */,
-				F2D783B82C13EF90001BF9A3 /* extension + String.swift */,
+				F2D783B82C13EF90001BF9A3 /* String+Localization.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 			files = (
 				F2FF5BF92C12861900F00A28 /* MealDetailView.swift in Sources */,
 				F2FF5BEF2C126CD400F00A28 /* MealDetailsResponse.swift in Sources */,
-				F2D783B92C13EF90001BF9A3 /* extension + String.swift in Sources */,
+				F2D783B92C13EF90001BF9A3 /* String+Localization.swift in Sources */,
 				F2FF5BFE2C1399EF00F00A28 /* Reachability.swift in Sources */,
 				F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */,
 				F208EA282C12583F0040F4D1 /* LaunchScreenView.swift in Sources */,
