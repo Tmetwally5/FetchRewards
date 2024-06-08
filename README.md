@@ -21,7 +21,7 @@
     <img src="./Documentation_Images/a4.png" alt="Light mode screenshot 4" width="200" height="300"/>
     <img src="./Documentation_Images/a5.png" alt="Light mode screenshot 5" width="200" height="300"/>
     <img src="./Documentation_Images/a6.png" alt="Light mode screenshot 6" width="200" height="300"/>
-    <img src="./Documentation_Images/a7.png" alt="Light mode screenshot 7" width="200" height="300"/>
+    <img src="./Documentation_Images/7.png" alt="Light mode screenshot 7" width="200" height="300"/>
 </div>
 
 ## Overview
