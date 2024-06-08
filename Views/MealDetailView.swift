@@ -55,21 +55,40 @@ struct MealInfoView: View {
 
 struct IngredientsListView: View {
     let meal: MealDetails
-    
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Ingredients:")
-                .font(.headline)
-            
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Ingredients")
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.bottom, 8)
+                .foregroundColor(.primary)
+
             ForEach(meal.getIngredientMeasurementListxx(), id: \.0) { ingredient, measure in
-                    Text("\(ingredient) - \(measure)")
+                HStack {
+                    Text(ingredient)
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                    
+                    Spacer()
+                    
+                    Text(measure)
+                        .font(.body)
+                        .foregroundColor(.primary)
+                }
+                .padding(.vertical, 8)
+                .padding(.horizontal, 12)
+                .background(Color(UIColor.systemGray6))
+                .cornerRadius(8)
             }
         }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(UIColor.systemBackground))
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+        )
+        .padding()
     }
 }
 
-extension MealDetails {
-    func value(for key: String) -> String {
-        return ""
-    }
-}
