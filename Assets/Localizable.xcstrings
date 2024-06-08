@@ -1,0 +1,171 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "area_example" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g., Canadian, Mexican"
+          }
+        }
+      }
+    },
+    "category_example" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g., Seafood, Dessert"
+          }
+        }
+      }
+    },
+    "ingredient_example" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g., chicken breast, tomatoes"
+          }
+        }
+      }
+    },
+    "Ingredients" : {
+
+    },
+    "Instructions" : {
+
+    },
+    "Loading..." : {
+
+    },
+    "name_example" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g., Arrabiata, Margherita"
+          }
+        }
+      }
+    },
+    "No internet connection. Please check your connection." : {
+
+    },
+    "no_internet_connection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No internet connection. Please check your connection."
+          }
+        }
+      }
+    },
+    "no_results" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We did not find any recipes for this %@. Try searching for something different."
+          }
+        }
+      }
+    },
+    "recipes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipes"
+          }
+        }
+      }
+    },
+    "Recipes" : {
+
+    },
+    "search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    },
+    "Search" : {
+
+    },
+    "Search By" : {
+
+    },
+    "search_by" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search By"
+          }
+        }
+      }
+    },
+    "Select a category" : {
+
+    },
+    "Select Category" : {
+
+    },
+    "Select Search Option" : {
+
+    },
+    "select_a_category" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a category"
+          }
+        }
+      }
+    },
+    "select_category" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Category"
+          }
+        }
+      }
+    },
+    "select_search_option" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Search Option"
+          }
+        }
+      }
+    },
+    "We did not find any recipes for this %@. Try searching for something different." : {
+
+    }
+  },
+  "version" : "1.0"
+}
