@@ -26,6 +26,9 @@ struct Meal: Codable, Identifiable {
     /// The unique identifier for the meal.
     let id: String?
     
+    /// The URL string for the meal thumbnail image.
+    let strMealThumb:String?
+    
     /// The name of the meal.
     let strMeal: String?
 
@@ -40,6 +43,9 @@ struct Meal: Codable, Identifiable {
         
         /// The name of the meal, mapped directly from the JSON key "strMeal".
         case strMeal
+        
+        /// The URL string for the meal thumbnail image, mapped from the JSON key "strMealThumb".
+        case strMealThumb
         
     }
 }

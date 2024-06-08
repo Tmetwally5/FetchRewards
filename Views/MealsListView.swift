@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher // Import Kingfisher for image loading
 
 /**
  The `MealsListView` struct represents the main view for browsing meals.
@@ -253,6 +254,8 @@ struct SearchTextFieldView: View {
     }
 }
 
+
+
 /**
  The `MealsList` struct represents a list view displaying a list of meals.
  
@@ -271,15 +274,28 @@ struct MealsList: View {
         List(viewModel.meals) { meal in
             // Each meal is presented as a navigation link to the meal detail view.
             NavigationLink(destination: MealDetailView(viewModel: detailsViewModel, mealId: meal.id ?? "")) {
-                // Display the meal's name as the text of the navigation link.
-                Text(meal.strMeal ?? "")
-                    .accessibilityLabel(meal.strMeal ?? "")
-                    .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
+                // Display the meal's name and image as the content of the navigation link.
+                HStack {
+                    // Load the meal's image using Kingfisher and display it as a circle.
+                    KFImage(URL(string: meal.strMealThumb ?? ""))
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .padding(.trailing, 10) // Add some padding between the image and text
+                    
+                    // Display the meal's name as the text of the navigation link.
+                    Text(meal.strMeal ?? "")
+                        .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
+                }
+                .accessibilityElement(children: .combine) // Combine accessibility elements for better accessibility
+                .accessibilityLabel(meal.strMeal ?? "") // Set accessibility label for the navigation link
             }
         }
         .cornerRadius(8) // Apply corner radius to the list.
     }
 }
+
 
 
 /**

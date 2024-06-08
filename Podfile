@@ -7,6 +7,7 @@ target 'FetchRewards' do
 
   pod 'Moya'
   pod 'Moya/Combine'
+  pod 'Kingfisher'
 
   target 'FetchRewardsTests' do
     inherit! :search_paths
