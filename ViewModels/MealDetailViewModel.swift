@@ -22,7 +22,7 @@ class MealDetailViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     /// Instance of `NetworkService` used for network requests.
-    private var networkService: NetworkService
+    var networkService: NetworkService
     
     /**
      Initializes the view model with a given network service.
