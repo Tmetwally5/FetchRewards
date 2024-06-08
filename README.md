@@ -4,15 +4,15 @@
 
 <div style="display: flex; flex-wrap: wrap;">
     <img src="./Documentation_Images/d1.jpeg" alt="Dark mode screenshot 1" width="100" height="150"/>
-    <img src="./Documentation_Images/d2.png" alt="Dark mode screenshot 2" width="100" height="150"/>
-    <img src="./Documentation_Images/d3.png" alt="Dark mode screenshot 3" width="100" height="150"/>
-    <img src="./Documentation_Images/d4.png" alt="Dark mode screenshot 4" width="100" height="150"/>
-    <img src="./Documentation_Images/d5.png" alt="Dark mode screenshot 5" width="100" height="150"/>
-    <img src="./Documentation_Images/d6.png" alt="Dark mode screenshot 6" width="100" height="150"/>
-    <img src="./Documentation_Images/d7.png" alt="Dark mode screenshot 7" width="100" height="150"/>
-    <img src="./Documentation_Images/d8.png" alt="Dark mode screenshot 7" width="100" height="150"/>
-    <img src="./Documentation_Images/d9.png" alt="Dark mode screenshot 7" width="100" height="150"/>
-    <img src="./Documentation_Images/d10.png" alt="Dark mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/d2.PNG" alt="Dark mode screenshot 2" width="100" height="150"/>
+    <img src="./Documentation_Images/d3.PNG" alt="Dark mode screenshot 3" width="100" height="150"/>
+    <img src="./Documentation_Images/d4.PNG" alt="Dark mode screenshot 4" width="100" height="150"/>
+    <img src="./Documentation_Images/d5.PNG" alt="Dark mode screenshot 5" width="100" height="150"/>
+    <img src="./Documentation_Images/d6.PNG" alt="Dark mode screenshot 6" width="100" height="150"/>
+    <img src="./Documentation_Images/d7.PNG" alt="Dark mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/d8.PNG" alt="Dark mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/d9.PNG" alt="Dark mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/d10.PNG" alt="Dark mode screenshot 7" width="100" height="150"/>
     
 </div>
 
