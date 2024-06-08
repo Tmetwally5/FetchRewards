@@ -30,6 +30,7 @@ struct MealsListView: View {
                             handleSearchOptionChange(newValue)
                         }
                         .padding(.bottom, 10)
+                        .accessibilityLabel(String.Localization.search_by)
                     
                     if selectedSearchOption == .category {
                         CategoryPickerView(viewModel: mealsViewModel, searchQuery: $searchQuery, category: $category)
@@ -68,6 +69,7 @@ struct MealsListView: View {
             }
             .navigationBarTitle(String.Localization.recipes)
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // Enable navigation on iPad
     }
 
     private func handleSearchOptionChange(_ newValue: SearchOption) {
@@ -90,9 +92,12 @@ struct SearchOptionPicker: View {
     var body: some View {
         VStack {
             Text(String.Localization.search_by)
+                .accessibilityLabel(String.Localization.search_by)
             Picker(String.Localization.select_search_option, selection: $selectedSearchOption) {
                 ForEach(SearchOption.allCases, id: \.self) { option in
-                    Text(option.rawValue.capitalized).tag(option.rawValue.capitalized)
+                    Text(option.rawValue.capitalized)
+                        .accessibilityLabel(option.rawValue.capitalized)
+                        .tag(option.rawValue.capitalized)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
@@ -110,11 +115,14 @@ struct CategoryPickerView: View {
             HStack {
                 Spacer()
                 Text(String.Localization.select_a_category)
+                    .accessibilityLabel(String.Localization.select_a_category)
                 Spacer()
                 if !searchQuery.isEmpty {
                     Picker(String.Localization.select_category, selection: $searchQuery) {
                         ForEach(viewModel.categories, id: \.id) { category in
-                            Text(category.strCategory ?? "").tag(category.strCategory ?? "")
+                            Text(category.strCategory ?? "")
+                                .accessibilityLabel(category.strCategory ?? "")
+                                .tag(category.strCategory ?? "")
                         }
                     }
                     .pickerStyle(DefaultPickerStyle())
@@ -135,6 +143,7 @@ struct CategoryPickerView: View {
             }
         } else {
             ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
         }
     }
 }
@@ -148,6 +157,8 @@ struct SearchTextFieldView: View {
         HStack {
             TextField(selectedSearchOption.getAsExample(), text: $searchQuery)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .accessibilityLabel(selectedSearchOption.getAsExample())
+                .accessibilityValue(searchQuery)
             if selectedSearchOption != .name {
                 Button(action: fetchMealsAction) {
                     Text(String.Localization.search)
@@ -156,6 +167,7 @@ struct SearchTextFieldView: View {
                         .frame(width: 100, height: 40)
                         .background(Color.blue)
                         .cornerRadius(8)
+                        .accessibilityLabel(String.Localization.search)
                 }
             }
         }
@@ -171,6 +183,7 @@ struct MealsList: View {
         List(viewModel.meals) { meal in
             NavigationLink(destination: MealDetailView(viewModel: detailsViewModel, mealId: meal.id ?? "")) {
                 Text(meal.strMeal ?? "")
+                    .accessibilityLabel(meal.strMeal ?? "")
             }
         }
         .cornerRadius(8)

@@ -14,20 +14,24 @@ struct MealDetailView: View {
     var body: some View {
         VStack {
             contentView
+                .accessibilityElement(children: .ignore)
+                
         }
         .onAppear {
             viewModel.fetchMealDetail(byId: mealId)
         }
+        .accessibilityElement(children: .contain)
     }
     
     @ViewBuilder
     private var contentView: some View {
         if let meal = viewModel.meal {
-            ScrollView{
+            ScrollView {
                 MealInfoView(meal: meal)
             }
         } else {
             Text(String.Localization.loading)
+                .accessibilityLabel(String.Localization.loading)
         }
     }
 }
@@ -39,13 +43,22 @@ struct MealInfoView: View {
         VStack(spacing: 20) {
             Text(meal.strMeal ?? String.Localization.unknown_meal)
                 .font(.largeTitle)
+                .accessibilityLabel(meal.strMeal ?? String.Localization.unknown_meal)
+            
             Divider()
+            
             Text(String.Localization.instructions)
                 .font(.headline)
-            Text(meal.strInstructions ?? String.Localization.no_instructions_available).padding()
+                .accessibilityLabel(String.Localization.instructions)
+            
+            Text(meal.strInstructions ?? String.Localization.no_instructions_available)
+                .padding()
+            
             Divider()
+            
             IngredientsListView(meal: meal)
         }
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -59,18 +72,21 @@ struct IngredientsListView: View {
                 .fontWeight(.bold)
                 .padding(.bottom, 8)
                 .foregroundColor(.primary)
+                .accessibilityLabel(String.Localization.ingredients)
 
             ForEach(meal.getIngredientMeasurementListxx(), id: \.0) { ingredient, measure in
                 HStack {
                     Text(ingredient)
                         .font(.body)
                         .foregroundColor(.secondary)
+                        .accessibilityLabel(ingredient)
                     
                     Spacer()
                     
                     Text(measure)
                         .font(.body)
                         .foregroundColor(.primary)
+                        .accessibilityLabel(measure)
                 }
                 .padding(.vertical, 5)
                 .padding(.horizontal, 5)
@@ -85,6 +101,6 @@ struct IngredientsListView: View {
                 .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
         )
         .padding()
+        .accessibilityElement(children: .contain)
     }
 }
-
