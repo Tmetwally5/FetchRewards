@@ -25,6 +25,7 @@
 		F28C2CA32C14DD360046BEC9 /* AppDependenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA22C14DD360046BEC9 /* AppDependenciesTests.swift */; };
 		F28C2CA52C14DF4B0046BEC9 /* MealsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA42C14DF4B0046BEC9 /* MealsViewModelTests.swift */; };
 		F28C2CA72C14F8330046BEC9 /* MealDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA62C14F8330046BEC9 /* MealDetailViewModelTests.swift */; };
+		F28C2CAB2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CAA2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift */; };
 		F2D783B72C13EE11001BF9A3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */; };
 		F2D783B92C13EF90001BF9A3 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D783B82C13EF90001BF9A3 /* String+Localization.swift */; };
 		F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */; };
@@ -85,6 +86,7 @@
 		F28C2CA22C14DD360046BEC9 /* AppDependenciesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesTests.swift; sourceTree = "<group>"; };
 		F28C2CA42C14DF4B0046BEC9 /* MealsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModelTests.swift; sourceTree = "<group>"; };
 		F28C2CA62C14F8330046BEC9 /* MealDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModelTests.swift; sourceTree = "<group>"; };
+		F28C2CAA2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewUITests.swift; sourceTree = "<group>"; };
 		F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F2D783B82C13EF90001BF9A3 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsResponse.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				F208EA452C1258400040F4D1 /* FetchRewardsUITests.swift */,
 				F208EA472C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift */,
+				F28C2CAA2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift */,
 			);
 			path = FetchRewardsUITests;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 			files = (
 				F208EA482C1258400040F4D1 /* FetchRewardsUITestsLaunchTests.swift in Sources */,
 				F208EA462C1258400040F4D1 /* FetchRewardsUITests.swift in Sources */,
+				F28C2CAB2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
