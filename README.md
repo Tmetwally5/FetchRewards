@@ -39,6 +39,8 @@ This app is a comprehensive recipe application built using the MVVM (Model-View-
 - **Dynamic Font and Accessibility Support:** Adjusts to the user's preferred font sizes and supports high contrast mode for better readability.
 - **Dark Mode and Light Mode:** Fully supports both dark mode and light mode, automatically adapting to the system settings.
 - **Localization:** Prepared for localization. To add another language, include the necessary translations in the localization files.
+- - **Landscape and Portrait Support:** The app is designed to work seamlessly in both landscape and portrait orientations.
+
 
 ### Networking
 
