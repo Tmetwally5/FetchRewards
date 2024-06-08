@@ -12,27 +12,45 @@ import Moya
 @testable import FetchRewards
 
 class MealsViewModelTests: XCTestCase {
-    
 
     class MockNetworkService: NetworkService {
+        
+        var shouldFail = false
+        
         override func fetchMealListByCategory(category: String) -> AnyPublisher<MealsResponse, Error> {
-            let mealsResponse = MealsResponse(meals: getMealList())
-            return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            if shouldFail {
+                return Fail(error: NSError(domain: "MockError", code: 123, userInfo: nil)).eraseToAnyPublisher()
+            } else {
+                let mealsResponse = MealsResponse(meals: getMealList())
+                return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            }
         }
         
         override func fetchMealListByName(name: String) -> AnyPublisher<MealsResponse, Error> {
-            let mealsResponse = MealsResponse(meals: getMealList())
-            return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            if shouldFail {
+                return Fail(error: NSError(domain: "MockError", code: 123, userInfo: nil)).eraseToAnyPublisher()
+            } else {
+                let mealsResponse = MealsResponse(meals: getMealList())
+                return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            }
         }
         
         override func fetchMealListByIngredient(ingredient: String) -> AnyPublisher<MealsResponse, Error> {
-            let mealsResponse = MealsResponse(meals: getMealList())
-            return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            if shouldFail {
+                return Fail(error: NSError(domain: "MockError", code: 123, userInfo: nil)).eraseToAnyPublisher()
+            } else {
+                let mealsResponse = MealsResponse(meals: getMealList())
+                return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            }
         }
         
         override func fetchMealListByCountry(country: String) -> AnyPublisher<MealsResponse, Error> {
-            let mealsResponse = MealsResponse(meals: getMealList())
-            return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            if shouldFail {
+                return Fail(error: NSError(domain: "MockError", code: 123, userInfo: nil)).eraseToAnyPublisher()
+            } else {
+                let mealsResponse = MealsResponse(meals: getMealList())
+                return Result.Publisher(mealsResponse).eraseToAnyPublisher()
+            }
         }
         
         override func fetchCategories() -> AnyPublisher<CategoriesResponse, Error> {
@@ -59,40 +77,62 @@ class MealsViewModelTests: XCTestCase {
     }
 
     
-    func testFetchMealsByCategory() {
-        testFetchMeals(searchOption: .category, query: "Test Category")
+    func testFetchMealsByCategorySuccess() {
+        testFetchMeals(searchOption: .category, query: "Test Category",shouldFail: false)
+    }
+    
+    func testFetchMealsByCategoryFailure() {
+        testFetchMeals(searchOption: .category, query: "Test Category", shouldFail: true)
     }
 
-    func testFetchMealsByName() {
-        testFetchMeals(searchOption: .name, query: "Test Category")
+    func testFetchMealsByNameSuccess() {
+        testFetchMeals(searchOption: .name, query: "Test Category",shouldFail: false)
+    }
+    
+    func testFetchMealsByNameFailure() {
+        testFetchMeals(searchOption: .name, query: "Test Category",shouldFail: true)
+    }
+    
+
+    func testFetchMealsByIngredientSuccess() {
+        testFetchMeals(searchOption: .ingredient, query: "Test Category",shouldFail: false)
+    }
+    
+    func testFetchMealsByIngredientFailure() {
+        testFetchMeals(searchOption: .ingredient, query: "Test Category",shouldFail: true)
     }
 
-    func testFetchMealsByIngredient() {
-        testFetchMeals(searchOption: .ingredient, query: "Test Category")
+    func testFetchMealsByCountrySuccess() {
+        testFetchMeals(searchOption: .area, query: "Test Category",shouldFail: false)
     }
-
-    func testFetchMealsByCountry() {
-        testFetchMeals(searchOption: .area, query: "Test Category")
+    
+    func testFetchMealsByCountryFailure() {
+        testFetchMeals(searchOption: .area, query: "Test Category",shouldFail: true)
     }
-
-    private func testFetchMeals(searchOption: SearchOption, query: String) {
-        let expectation = self.expectation(description: "Fetch meals")
-        
-        let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
-        
-        viewModel.fetchMeals(searchOption: searchOption, query: query)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            XCTAssertEqual(viewModel.meals.count, 4)
-            XCTAssertEqual(viewModel.meals.first?.id, "1")
-            XCTAssertEqual(viewModel.meals.first?.strMealThumb, "url1")
-            XCTAssertEqual(viewModel.meals.first?.strMeal, "name1")
-            
-            expectation.fulfill()
-        }
-        
-        waitForExpectations(timeout: 2.0, handler: nil)
-    }
+    
+    private func testFetchMeals(searchOption: SearchOption, query: String, shouldFail: Bool) {
+         let expectation = self.expectation(description: "Fetch meals")
+         
+         let viewModel = MealsViewModel(networkService: MockNetworkService(provider: MoyaProvider<MyAPI>()))
+         (viewModel.networkService as? MockNetworkService)?.shouldFail = shouldFail
+         
+         viewModel.fetchMeals(searchOption: searchOption, query: query)
+         
+         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+             if shouldFail {
+                 XCTAssert(viewModel.meals.isEmpty)
+             } else {
+                 XCTAssertEqual(viewModel.meals.count, 4)
+                 XCTAssertEqual(viewModel.meals.first?.id, "1")
+                 XCTAssertEqual(viewModel.meals.first?.strMealThumb, "url1")
+                 XCTAssertEqual(viewModel.meals.first?.strMeal, "name1")
+             }
+             
+             expectation.fulfill()
+         }
+         
+         waitForExpectations(timeout: 2.0, handler: nil)
+     }
     
     func testFetchCategories() {
        
