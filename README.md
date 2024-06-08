@@ -15,13 +15,16 @@
 ### Light Mode Design
 
 <div style="display: flex; flex-wrap: wrap;">
-    <img src="./Documentation_Images/a1.png" alt="Light mode screenshot 1" width="200" height="300"/>
-    <img src="./Documentation_Images/a2.png" alt="Light mode screenshot 2" width="200" height="300"/>
-    <img src="./Documentation_Images/a3.png" alt="Light mode screenshot 3" width="200" height="300"/>
-    <img src="./Documentation_Images/a4.png" alt="Light mode screenshot 4" width="200" height="300"/>
-    <img src="./Documentation_Images/a5.png" alt="Light mode screenshot 5" width="200" height="300"/>
-    <img src="./Documentation_Images/a6.png" alt="Light mode screenshot 6" width="200" height="300"/>
-    <img src="./Documentation_Images/7.png" alt="Light mode screenshot 7" width="200" height="300"/>
+    <img src="./Documentation_Images/a1.png" alt="Light mode screenshot 1" width="100" height="150"/>
+    <img src="./Documentation_Images/a2.png" alt="Light mode screenshot 2" width="100" height="150"/>
+    <img src="./Documentation_Images/a3.png" alt="Light mode screenshot 3" width="100" height="150"/>
+    <img src="./Documentation_Images/a4.png" alt="Light mode screenshot 4" width="100" height="150"/>
+    <img src="./Documentation_Images/a5.png" alt="Light mode screenshot 5" width="100" height="150"/>
+    <img src="./Documentation_Images/a6.png" alt="Light mode screenshot 6" width="100" height="150"/>
+    <img src="./Documentation_Images/a7.png" alt="Light mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/a8.png" alt="Light mode screenshot 7" width="100" height="150"/>
+    <img src="./Documentation_Images/a9.png" alt="Light mode screenshot 7" width="100" height="150"/>
+    
 </div>
 
 ## Overview
