@@ -88,6 +88,8 @@ The app uses several endpoints to fetch meal data:
 - **Combine:** Used for managing asynchronous data streams and events.
 - **Reachability:** Used for monitoring network connectivity.
 - **SwiftUI:** Used for building the user interface.
+- **Kingfisher:** Utilized for efficient image loading and caching.
+
 
 ## App Modules
 
