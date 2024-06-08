@@ -29,9 +29,11 @@ struct MealDetailView: View {
             ScrollView {
                 MealInfoView(meal: meal)
             }
+            .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
         } else {
             Text(String.Localization.loading)
                 .accessibilityLabel(String.Localization.loading)
+                .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
         }
     }
 }
@@ -59,6 +61,7 @@ struct MealInfoView: View {
             IngredientsListView(meal: meal)
         }
         .accessibilityElement(children: .contain)
+        .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
     }
 }
 
@@ -102,5 +105,6 @@ struct IngredientsListView: View {
         )
         .padding()
         .accessibilityElement(children: .contain)
+        .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
     }
 }

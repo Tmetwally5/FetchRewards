@@ -7,6 +7,7 @@
 //
 import SwiftUI
 
+
 struct MealsListView: View {
     @EnvironmentObject var mealsViewModel: MealsViewModel
     @EnvironmentObject var detailsViewModel: MealDetailViewModel
@@ -93,6 +94,7 @@ struct SearchOptionPicker: View {
         VStack {
             Text(String.Localization.search_by)
                 .accessibilityLabel(String.Localization.search_by)
+                .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
             Picker(String.Localization.select_search_option, selection: $selectedSearchOption) {
                 ForEach(SearchOption.allCases, id: \.self) { option in
                     Text(option.rawValue.capitalized)
@@ -105,6 +107,10 @@ struct SearchOptionPicker: View {
     }
 }
 
+
+
+
+
 struct CategoryPickerView: View {
     @ObservedObject var viewModel: MealsViewModel
     @Binding var searchQuery: String
@@ -116,6 +122,7 @@ struct CategoryPickerView: View {
                 Spacer()
                 Text(String.Localization.select_a_category)
                     .accessibilityLabel(String.Localization.select_a_category)
+                    .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
                 Spacer()
                 if !searchQuery.isEmpty {
                     Picker(String.Localization.select_category, selection: $searchQuery) {
@@ -144,6 +151,7 @@ struct CategoryPickerView: View {
         } else {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
+                .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
         }
     }
 }
@@ -159,6 +167,7 @@ struct SearchTextFieldView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .accessibilityLabel(selectedSearchOption.getAsExample())
                 .accessibilityValue(searchQuery)
+                .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
             if selectedSearchOption != .name {
                 Button(action: fetchMealsAction) {
                     Text(String.Localization.search)
@@ -168,11 +177,17 @@ struct SearchTextFieldView: View {
                         .background(Color.blue)
                         .cornerRadius(8)
                         .accessibilityLabel(String.Localization.search)
+                        .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
                 }
             }
         }
     }
 }
+
+
+
+
+
 
 
 struct MealsList: View {
@@ -184,6 +199,7 @@ struct MealsList: View {
             NavigationLink(destination: MealDetailView(viewModel: detailsViewModel, mealId: meal.id ?? "")) {
                 Text(meal.strMeal ?? "")
                     .accessibilityLabel(meal.strMeal ?? "")
+                    .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
             }
         }
         .cornerRadius(8)
@@ -198,9 +214,11 @@ struct NoResultsView: View {
             .foregroundColor(.gray)
             .multilineTextAlignment(.center)
             .padding()
+            .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize))
         Spacer()
     }
 }
+
 
 enum SearchOption: String, CaseIterable {
     case category
