@@ -4,7 +4,6 @@
 
 <div style="display: flex; flex-wrap: wrap;">
     <img src="./Documentation_Images/d1.jpeg" alt="Dark mode screenshot 1" width="100" height="150"/>
-    <img src="./Documentation_Images/d2.PNG" alt="Dark mode screenshot 2" width="100" height="150"/>
     <img src="./Documentation_Images/d4.PNG" alt="Dark mode screenshot 4" width="100" height="150"/>
     <img src="./Documentation_Images/d5.PNG" alt="Dark mode screenshot 5" width="100" height="150"/>
     <img src="./Documentation_Images/d6.PNG" alt="Dark mode screenshot 6" width="100" height="150"/>

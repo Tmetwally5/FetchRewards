@@ -23,6 +23,7 @@
 		F28C2C9D2C14D2390046BEC9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2C9C2C14D2390046BEC9 /* NetworkServiceTests.swift */; };
 		F28C2CA12C14DCDB0046BEC9 /* StringLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA02C14DCDB0046BEC9 /* StringLocalizationTests.swift */; };
 		F28C2CA32C14DD360046BEC9 /* AppDependenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA22C14DD360046BEC9 /* AppDependenciesTests.swift */; };
+		F28C2CA52C14DF4B0046BEC9 /* MealsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA42C14DF4B0046BEC9 /* MealsViewModelTests.swift */; };
 		F2D783B72C13EE11001BF9A3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */; };
 		F2D783B92C13EF90001BF9A3 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D783B82C13EF90001BF9A3 /* String+Localization.swift */; };
 		F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */; };
@@ -81,6 +82,7 @@
 		F28C2C9C2C14D2390046BEC9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		F28C2CA02C14DCDB0046BEC9 /* StringLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalizationTests.swift; sourceTree = "<group>"; };
 		F28C2CA22C14DD360046BEC9 /* AppDependenciesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesTests.swift; sourceTree = "<group>"; };
+		F28C2CA42C14DF4B0046BEC9 /* MealsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModelTests.swift; sourceTree = "<group>"; };
 		F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F2D783B82C13EF90001BF9A3 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsResponse.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		F28C2C8F2C14C4F90046BEC9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F28C2CA42C14DF4B0046BEC9 /* MealsViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				F28C2C952C14C60F0046BEC9 /* MealDetailsTests.swift in Sources */,
 				F28C2C932C14C5A30046BEC9 /* MealsResponseTests.swift in Sources */,
 				F28C2CA12C14DCDB0046BEC9 /* StringLocalizationTests.swift in Sources */,
+				F28C2CA52C14DF4B0046BEC9 /* MealsViewModelTests.swift in Sources */,
 				F28C2C9D2C14D2390046BEC9 /* NetworkServiceTests.swift in Sources */,
 				F28C2C9B2C14CDE90046BEC9 /* MyAPITests.swift in Sources */,
 			);
