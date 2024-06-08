@@ -54,9 +54,6 @@
         }
       }
     },
-    "No internet connection. Please check your connection." : {
-
-    },
     "no_internet_connection" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -90,9 +87,6 @@
         }
       }
     },
-    "Recipes" : {
-
-    },
     "search" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -104,12 +98,6 @@
         }
       }
     },
-    "Search" : {
-
-    },
-    "Search By" : {
-
-    },
     "search_by" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -120,15 +108,6 @@
           }
         }
       }
-    },
-    "Select a category" : {
-
-    },
-    "Select Category" : {
-
-    },
-    "Select Search Option" : {
-
     },
     "select_a_category" : {
       "extractionState" : "manual",
@@ -162,9 +141,6 @@
           }
         }
       }
-    },
-    "We did not find any recipes for this %@. Try searching for something different." : {
-
     }
   },
   "version" : "1.0"

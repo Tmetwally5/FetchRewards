@@ -10,17 +10,17 @@ import SwiftUI
 struct MealsListView: View {
     @EnvironmentObject var mealsViewModel: MealsViewModel
     @EnvironmentObject var detailsViewModel: MealDetailViewModel
-    @EnvironmentObject var reachability:Reachability
+    @EnvironmentObject var reachability: Reachability
     @State private var searchQuery: String = ""
     @State private var category: String = ""
     @State private var selectedSearchOption: SearchOption = .category
-    
+
     var body: some View {
         NavigationView {
             VStack(spacing: 10) {
                 if !reachability.isConnected {
                     Spacer()
-                    Text("No internet connection. Please check your connection.")
+                    Text(String.Localization.no_internet_connection)
                         .foregroundColor(.red)
                         .padding()
                     Spacer()
@@ -55,7 +55,7 @@ struct MealsListView: View {
                     mealsViewModel.fetchCategories()
                 }
             }
-            .onChange(of: searchQuery) { _ , _ in
+            .onChange(of: searchQuery) { _, _ in
                 if selectedSearchOption != .area && selectedSearchOption != .ingredient {
                     mealsViewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                 }
@@ -66,10 +66,10 @@ struct MealsListView: View {
                     mealsViewModel.fetchMeals(searchOption: selectedSearchOption, query: searchQuery)
                 }
             }
-            .navigationBarTitle("Recipes")
+            .navigationBarTitle(String.Localization.recipes)
         }
     }
-    
+
     private func handleSearchOptionChange(_ newValue: SearchOption) {
         mealsViewModel.meals = []
         if newValue == .name {
@@ -89,8 +89,8 @@ struct SearchOptionPicker: View {
 
     var body: some View {
         VStack {
-            Text("Search By")
-            Picker("Select Search Option", selection: $selectedSearchOption) {
+            Text(String.Localization.search_by)
+            Picker(String.Localization.select_search_option, selection: $selectedSearchOption) {
                 ForEach(SearchOption.allCases, id: \.self) { option in
                     Text(option.rawValue.capitalized).tag(option.rawValue.capitalized)
                 }
@@ -109,13 +109,12 @@ struct CategoryPickerView: View {
         if !viewModel.categories.isEmpty {
             HStack {
                 Spacer()
-                Text("Select a category")
+                Text(String.Localization.select_a_category)
                 Spacer()
-                if !searchQuery.isEmpty{
-                    Picker("Select Category", selection: $searchQuery) {
+                if !searchQuery.isEmpty {
+                    Picker(String.Localization.select_category, selection: $searchQuery) {
                         ForEach(viewModel.categories, id: \.id) { category in
                             Text(category.strCategory ?? "").tag(category.strCategory ?? "")
-                                
                         }
                     }
                     .pickerStyle(DefaultPickerStyle())
@@ -123,10 +122,8 @@ struct CategoryPickerView: View {
                     .cornerRadius(8)
                     .tint(.white)
                 }
-
                 Spacer()
             }
-            
             .cornerRadius(8)
             .onReceive(viewModel.$categories) { _ in
                 if !viewModel.categories.isEmpty && searchQuery.isEmpty {
@@ -153,7 +150,7 @@ struct SearchTextFieldView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             if selectedSearchOption != .name {
                 Button(action: fetchMealsAction) {
-                    Text("Search")
+                    Text(String.Localization.search)
                         .foregroundColor(.white)
                         .padding()
                         .frame(width: 100, height: 40)
@@ -184,7 +181,7 @@ struct NoResultsView: View {
     var selectedSearchOption: SearchOption
 
     var body: some View {
-        Text("We did not find any recipes for this \(selectedSearchOption.rawValue). Try searching for something different.")
+        Text(String.Localization.no_results(selectedSearchOption.rawValue))
             .foregroundColor(.gray)
             .multilineTextAlignment(.center)
             .padding()
@@ -201,13 +198,13 @@ enum SearchOption: String, CaseIterable {
     func getAsExample() -> String {
         switch self {
         case .area:
-            return "e.g., Canadian, Mexican"
+            return String.Localization.area_example
         case .category:
-            return "e.g., Seafood, Dessert"
+            return String.Localization.category_example
         case .ingredient:
-            return "e.g., chicken breast, tomatoes"
+            return String.Localization.ingredient_example
         case .name:
-            return "e.g., Arrabiata, Margherita"
+            return String.Localization.name_example
         }
     }
 }
