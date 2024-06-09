@@ -108,30 +108,30 @@ The app uses several endpoints to fetch meal data:
 
 
 
-###Testing
+### Testing
 
-##Unit Tests
+## Unit Tests
 
-##Models
-- **MealsResponseTests: Validates the parsing and integrity of meal response models.
-- **MealDetailsTests: Ensures the correctness of meal detail models.
-- **CategoriesResponseTests: Verifies the categories response model data and parsing.
+## Models
+- **MealsResponseTests:** Validates the parsing and integrity of meal response models.
+- **MealDetailsTests:** Ensures the correctness of meal detail models.
+- **CategoriesResponseTests:** Verifies the categories response model data and parsing.
 
-##ViewModels
-- **MealsViewModelTests: Tests the logic for fetching and managing meals.
-- **MealDetailViewModelTests: Validates the logic for handling meal detail data.
+## ViewModels
+- **MealsViewModelTests:** Tests the logic for fetching and managing meals.
+- **MealDetailViewModelTests:** Validates the logic for handling meal detail data.
 
-##Utilities
-- **StringLocalizationTests: Checks the correctness and availability of localized strings.
-- **AppDependenciesTests: Verifies the setup and configuration of app dependencies.
+## Utilities
+- **StringLocalizationTests:** Checks the correctness and availability of localized strings.
+- **AppDependenciesTests:** Verifies the setup and configuration of app dependencies.
 
-##Services
-- **MyApiTests: Tests API service interactions and response handling.
-- **NetworkServicesTests: Ensures the reliability and correctness of network service functionalities.
+## Services
+- **MyApiTests:** Tests API service interactions and response handling.
+- **NetworkServicesTests:** Ensures the reliability and correctness of network service functionalities.
 
-##UI Tests
+## UI Tests
 
-- **LaunchScreenViewUITests: Verifies that the launch screen displays correctly and transitions smoothly to the main view.
+- **LaunchScreenViewUITests:** Verifies that the launch screen displays correctly and transitions smoothly to the main view.
 
 
 
