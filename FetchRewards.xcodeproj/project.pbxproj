@@ -24,6 +24,13 @@
 		F28C2CA52C14DF4B0046BEC9 /* MealsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA42C14DF4B0046BEC9 /* MealsViewModelTests.swift */; };
 		F28C2CA72C14F8330046BEC9 /* MealDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CA62C14F8330046BEC9 /* MealDetailViewModelTests.swift */; };
 		F28C2CAB2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CAA2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift */; };
+		F28C2CB32C1602200046BEC9 /* SearchOptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CB22C1602200046BEC9 /* SearchOptionPicker.swift */; };
+		F28C2CB52C1602630046BEC9 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CB42C1602630046BEC9 /* CategoryPickerView.swift */; };
+		F28C2CB72C1603080046BEC9 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CB62C1603080046BEC9 /* SearchTextFieldView.swift */; };
+		F28C2CB92C16033D0046BEC9 /* MealsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CB82C16033D0046BEC9 /* MealsList.swift */; };
+		F28C2CBB2C1606EB0046BEC9 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CBA2C1606EB0046BEC9 /* NoResultsView.swift */; };
+		F28C2CBD2C1607CA0046BEC9 /* IngredientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CBC2C1607CA0046BEC9 /* IngredientsListView.swift */; };
+		F28C2CBF2C1608010046BEC9 /* MealInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28C2CBE2C1608010046BEC9 /* MealInfoView.swift */; };
 		F2D783B72C13EE11001BF9A3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */; };
 		F2D783B92C13EF90001BF9A3 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D783B82C13EF90001BF9A3 /* String+Localization.swift */; };
 		F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */; };
@@ -83,6 +90,13 @@
 		F28C2CA42C14DF4B0046BEC9 /* MealsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModelTests.swift; sourceTree = "<group>"; };
 		F28C2CA62C14F8330046BEC9 /* MealDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModelTests.swift; sourceTree = "<group>"; };
 		F28C2CAA2C14FEB90046BEC9 /* LaunchScreenViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewUITests.swift; sourceTree = "<group>"; };
+		F28C2CB22C1602200046BEC9 /* SearchOptionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchOptionPicker.swift; path = "../../../../Library/Mobile Documents/.Trash/FetchRewards 09.56.44/FetchRewardsUITests/SearchOptionPicker.swift"; sourceTree = "<group>"; };
+		F28C2CB42C1602630046BEC9 /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
+		F28C2CB62C1603080046BEC9 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
+		F28C2CB82C16033D0046BEC9 /* MealsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsList.swift; sourceTree = "<group>"; };
+		F28C2CBA2C1606EB0046BEC9 /* NoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
+		F28C2CBC2C1607CA0046BEC9 /* IngredientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListView.swift; sourceTree = "<group>"; };
+		F28C2CBE2C1608010046BEC9 /* MealInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInfoView.swift; sourceTree = "<group>"; };
 		F2D783B62C13EE11001BF9A3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F2D783B82C13EF90001BF9A3 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		F2FF5BEC2C126B1C00F00A28 /* MealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsResponse.swift; sourceTree = "<group>"; };
@@ -248,6 +262,29 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		F28C2CB02C1601A80046BEC9 /* MealsList */ = {
+			isa = PBXGroup;
+			children = (
+				F2FF5BF62C1285F700F00A28 /* MealsListView.swift */,
+				F28C2CB22C1602200046BEC9 /* SearchOptionPicker.swift */,
+				F28C2CB42C1602630046BEC9 /* CategoryPickerView.swift */,
+				F28C2CB62C1603080046BEC9 /* SearchTextFieldView.swift */,
+				F28C2CB82C16033D0046BEC9 /* MealsList.swift */,
+				F28C2CBA2C1606EB0046BEC9 /* NoResultsView.swift */,
+			);
+			path = MealsList;
+			sourceTree = "<group>";
+		};
+		F28C2CB12C1602020046BEC9 /* MealDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F2FF5BF82C12861900F00A28 /* MealDetailView.swift */,
+				F28C2CBC2C1607CA0046BEC9 /* IngredientsListView.swift */,
+				F28C2CBE2C1608010046BEC9 /* MealInfoView.swift */,
+			);
+			path = MealDetail;
+			sourceTree = "<group>";
+		};
 		F2FF5BEB2C12692500F00A28 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,10 +307,10 @@
 		F2FF5BF52C1285CF00F00A28 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F28C2CB12C1602020046BEC9 /* MealDetail */,
+				F28C2CB02C1601A80046BEC9 /* MealsList */,
 				F208EA272C12583F0040F4D1 /* LaunchScreenView.swift */,
 				F208EA252C12583F0040F4D1 /* FetchRewardsApp.swift */,
-				F2FF5BF62C1285F700F00A28 /* MealsListView.swift */,
-				F2FF5BF82C12861900F00A28 /* MealDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -530,16 +567,23 @@
 				F2FF5BEF2C126CD400F00A28 /* MealDetailsResponse.swift in Sources */,
 				F2D783B92C13EF90001BF9A3 /* String+Localization.swift in Sources */,
 				F2FF5BFE2C1399EF00F00A28 /* Reachability.swift in Sources */,
+				F28C2CBB2C1606EB0046BEC9 /* NoResultsView.swift in Sources */,
 				F2673AED2C1266CF00740EFD /* MyAPI.swift in Sources */,
 				F208EA282C12583F0040F4D1 /* LaunchScreenView.swift in Sources */,
 				F208EA262C12583F0040F4D1 /* FetchRewardsApp.swift in Sources */,
 				F2FF5BFC2C134E1800F00A28 /* CategoriesResponse.swift in Sources */,
+				F28C2CB92C16033D0046BEC9 /* MealsList.swift in Sources */,
 				F2FF5BF22C12858C00F00A28 /* MealsViewModel.swift in Sources */,
+				F28C2CBD2C1607CA0046BEC9 /* IngredientsListView.swift in Sources */,
 				F2673AEF2C12675A00740EFD /* NetworkService.swift in Sources */,
+				F28C2CBF2C1608010046BEC9 /* MealInfoView.swift in Sources */,
+				F28C2CB52C1602630046BEC9 /* CategoryPickerView.swift in Sources */,
 				F2FF5BF72C1285F700F00A28 /* MealsListView.swift in Sources */,
+				F28C2CB32C1602200046BEC9 /* SearchOptionPicker.swift in Sources */,
 				F2FF5C012C139FA500F00A28 /* AppDependencies.swift in Sources */,
 				F2FF5BF42C1285AD00F00A28 /* MealDetailViewModel.swift in Sources */,
 				F2FF5BED2C126B1C00F00A28 /* MealsResponse.swift in Sources */,
+				F28C2CB72C1603080046BEC9 /* SearchTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
